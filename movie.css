@@ -1,0 +1,47 @@
+html {
+background-color: rgb(247, 247, 247);
+
+}
+
+h1 {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img{
+
+width: 100px;
+height: 30px;    
+}
+.search-container {
+    float: right;
+    width: 1000px;
+}
+
+.search-input{
+
+   background-color: transparent;
+   border-radius: 20px;
+   width: 700px;
+   height: 40px;
+
+}
+
+.result-container{
+    display: block;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 1000px;
+    gap: 20px;
+}
+
+.search-button{
+    
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    height: 35px;
+    width: 150px;
+}
