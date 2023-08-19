@@ -3,6 +3,7 @@
 const API_KEY = 24358589; //use api key for the OMDB api
 const searchButton = document.getElementById('searchButton') //search movie
 const searchTitle = document.getElementsByClassName("search-input")[0]; //movie title input
+const resultContainer = document.getElementsByClassName("result-container")[0]; //div to output the api response data
 
 searchButton.addEventListener('click', () => {
 
