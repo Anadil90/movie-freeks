@@ -66,3 +66,23 @@ body {
     .search-button:hover {
         cursor: pointer;
     }
+
+    .poster {
+        width: 60%;
+        height: 55%;
+    }
+
+    .movie-title {
+        display: block;
+    }
+
+    .movie-info {
+        display: flex;
+        flex-direction: row;
+        margin-top: 25px;
+        width: 70%;
+    }
+
+    .info-group {
+        display: block;
+    }

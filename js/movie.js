@@ -14,13 +14,16 @@ searchButton.addEventListener('click', () => {
     .then(response => response.json())
     .then(data => {
       if(data.Response === 'True') {
+        console.log(data)
         //default container to display the movie search results
+        // create movie info div tempate by setting inner HTML of the result container div
         const movieInfo = ` 
         <div class="movie-info">
-        <h2>${data.Title}</h2>
-        <p><strong>Year:</strong> ${data.Year}</p>
-        <p><strong>Director:</strong>${data.Director}</p>
-        <p><strong>Actors</strong>${data.Actors}</p> 
+        <h2 class="info-group">${data.Title}</h2> 
+        <p class="info-group"><strong>Year:</strong> ${data.Year}</p>
+        <p class="info-group"><strong>Director:</strong>${data.Director}</p>
+        <p class="info-group"><strong>Actors</strong>${data.Actors}</p> 
+        <img class="poster" src=${data.Poster}/>
         </div>
         `;
         
