@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(148, 222, 235, 0.87)!important; 
+    background-color: rgba(199, 216, 219, 0.71)!important; 
 }
    
     
@@ -35,14 +35,11 @@ body {
         position: absolute;
         top: 120px;
         left: 20px;
-    width: 200px;
-    background-color: lightgray;
-    height: 100%;
-    overflow: hidden;
-    transition: width 0.3s;
-
-
-
+        width: 10rem;
+        background-color: rgba(199, 216, 219, 0.71);
+        height: 100%;
+        overflow: hidden;
+        transition: width 0.3s;
 
     }
 
@@ -163,10 +160,12 @@ margin-bottom: 20px;
         align-items: center;
         height: 100px;
         width: 100%;
-        background-color: antiquewhite;
+        background-color: rgba(122, 161, 168, 0.87);
+        color: #fff;
     }
 
     footer a {
         margin: 0 10px;
+        text-decoration: none;
+        color: #fff
     }
-
