@@ -10,7 +10,7 @@ searchButton.addEventListener('click', () => {
   const movieTitle = searchTitle.value; //get value from input
   
   if(movieTitle){
-    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${movieTitle}`) //fetch response from api
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${movieTitle}&p=5`) //fetch response from api
     .then(response => response.json())
     .then(data => {
       if(data.Response === 'True') {
@@ -23,6 +23,7 @@ searchButton.addEventListener('click', () => {
         <p class="info-group"><strong>Year:</strong> ${data.Year}</p>
         <p class="info-group"><strong>Director:</strong>${data.Director}</p>
         <p class="info-group"><strong>Actors</strong>${data.Actors}</p> 
+        <p class="description">${data.Plot}</p>
         <img class="poster" src=${data.Poster}/>
         </div>
         `;
