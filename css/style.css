@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(148, 222, 235, 0.87)!important; 
+    background-color: rgba(223, 227, 227, 0.87)!important; 
 }
    
     
@@ -30,11 +30,9 @@ body {
     }
 
     #leftbar {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 120px;
-        left: 20px;
+       position: fixed;
+    top: 0;
+    left: 0;
     width: 200px;
     background-color: lightgray;
     height: 100%;
