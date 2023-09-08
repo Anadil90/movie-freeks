@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(199, 216, 219, 0.71) !important;
+    background-color: rgba(200, 198, 198, 0.992);
 }
 
 h1 {
@@ -8,8 +8,9 @@ h1 {
 
 img {
 
-    width: 100px;
-    height: 30px;
+    width: 150px;
+    height: 47px;
+    margin-right: 10px;
 }
 
 .search-container {
@@ -33,7 +34,7 @@ img {
     top: 120px;
     left: 20px;
     width: 10rem;
-    background-color: rgba(199, 216, 219, 0.71);
+    background-color: rgba(231, 235, 236, 0.71);
     height: 100%;
     overflow: hidden;
     transition: width 0.3s;
@@ -41,7 +42,7 @@ img {
 }
 
 #leftbar:hover {
-    width: 250px;
+    width: 200px;
 }
 
 #leftbar ul {
@@ -89,7 +90,7 @@ img {
     justify-content: center;
     margin: 0 auto;
     margin-top: 25px;
-    border: 2px solid #e4e4e4;
+    border: 2px solid #ffffff;
     align-items: center;
 }
 
@@ -107,17 +108,26 @@ img {
     height: 35px;
     width: 150px;
     height: 100%;
+    margin-left: 10px;
 }
 
 .search-button:hover {
-    background-color: black;
+    background-color: rgb(157, 157, 157);
     color: white;
 
+}
+.movie-container{
+    display: flex;
+    align-items: flex-start;
 }
 
 .poster {
     width: 60%;
     height: 55%;
+}
+
+.poster-container{
+    margin-right: 20px;
 }
 
 .movie-title {
@@ -126,15 +136,17 @@ img {
 
 .movie-info {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column;
+    width: 400px;
+    justify-content: space-around;
+    align-items: center;
     margin-bottom: 20px;
 
 }
 
 .movie-info .poster {
-    width: 150px;
+    width: 250px;
+    border-radius: 20px;
     height: auto;
     margin-left: 20px;
 
