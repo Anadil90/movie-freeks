@@ -13,7 +13,7 @@ searchButton.addEventListener('click', () => {
     fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&t=${movieTitle}&p=5`) //fetch response from api
     .then(response => response.json())
     .then(data => {
-      if(data.Response === 'True') {
+      if(data.Response) {
         console.log(data)
         //default container to display the movie search results
         // create movie info div tempate by setting inner HTML of the result container div
