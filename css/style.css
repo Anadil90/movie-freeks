@@ -6,10 +6,10 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-img {
+.logo {
 
     width: 150px;
-    height: 47px;
+    height: 45px;
     margin-right: 10px;
 }
 

@@ -15,20 +15,44 @@ searchButton.addEventListener('click', () => {
     .then(data => {
       if(data.Response) {
         console.log(data)
-        //default container to display the movie search results
-        // create movie info div tempate by setting inner HTML of the result container div
-        const movieInfo = ` 
-        <div class="movie-info">
-        <h2 class="info-group">${data.Title}</h2> 
-        <p class="info-group"><strong>Year:</strong> ${data.Year}</p>
-        <p class="info-group"><strong>Director:</strong>${data.Director}</p>
-        <p class="info-group"><strong>Actors</strong>${data.Actors}</p> 
-        <p class="description">${data.Plot}</p>
-        <img class="poster" src=${data.Poster}/>
-        </div>
-        `;
-        
-       resultContainer.innerHTML = movieInfo; // change innerHTML text to the api response text
+        //inject api data into an object
+        let movieResponseData = {
+          title: data.Title,
+          data: data.Year,
+          director: data.Director,
+          actors: data.Actors,
+          plot: data.Plot,
+          poster: data.Poster
+
+        };
+
+        console.log(`api reponse object ${movieResponseData.plot}`)
+        const movieInfoContainer = document.createElement("div");
+        movieInfoContainer.className = "movie-info container";
+        //create children elements to display the movie info
+        const movieTitle = document.createElement("h2");
+        movieTitle.textContent = movieResponseData.title;
+        movieInfoContainer.appendChild(movieTitle);
+        const movieYear = document.createElement("p");
+        movieYear.textContent = movieResponseData.year;
+        movieInfoContainer.appendChild(movieYear);
+        const movieDirector = document.createElement("p");
+        movieDirector.textContent = movieResponseData.director;
+        movieInfoContainer.appendChild(movieDirector);
+        const movieActors = document.createElement("p");
+        movieActors.textContent = movieResponseData.actors;
+        movieInfoContainer.appendChild(movieActors);
+        const moviePlot = document.createElement("p");
+        moviePlot.textContent = movieResponseData.plot;
+        movieInfoContainer.appendChild(moviePlot);
+        const moviePoster = document.createElement("img");
+        moviePoster.src = movieResponseData.poster;
+        moviePoster.className = "poster";
+        movieInfoContainer.appendChild(moviePoster);
+        //remove placeholder text from movie info div
+        document.querySelector(".result-container").textContent = "";
+        //append movie info container to the parent result container
+        document.querySelector(".result-container").appendChild(movieInfoContainer)
 
       } else {
         resultContainer.innerHTML = `<p>An Error Occured`; // show error message if unable to fetch data from api
