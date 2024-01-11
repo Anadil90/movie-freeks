@@ -70,17 +70,35 @@ h1 {
     color: black;
 }
 
+.rightbar {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    width: 40px;
+    height: 90px;
+    display: flex;
+    flex-direction: column;
+}
 
 .social-icon {
     width: 35px;
     margin-bottom: 15px;
+    font-size: 23px;
+    transition: 400ms;
+    cursor: pointer;
+}
+
+img .social-icon:hover {
+    font-size: 23px;
+    transition: 400ms;
 }
 
 .result-container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin-top: 20px;
+    width: 70%;
+    justify-content: space-evenly;
+    margin: 20px auto;
 }
 
 .navigation-span {
@@ -116,14 +134,10 @@ h1 {
     color: white;
 
 }
-.movie-container{
-    display: flex;
-    align-items: flex-start;
-}
 
 .poster {
-    width: 60%;
-    height: 55%;
+    width: -webkit-fill-available !important;
+    height: 70% !important;
 }
 
 .poster-container{
@@ -137,10 +151,10 @@ h1 {
 .movie-info {
     display: flex;
     flex-direction: column;
-    width: 400px;
-    justify-content: space-around;
+    width: 70%;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 30px 0;
 
 }
 
