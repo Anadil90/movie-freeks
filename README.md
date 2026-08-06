@@ -20,16 +20,19 @@ The wireframing of the project was done on a Lenovo P12 tablet with pen input. T
 Landing page:
 The landing page of Movie Freeks is poised to be a simple page with a convincing call-to-action text, and 5 randomly generated icons that fall out from a random position on the viewport. The icons are camera reel, popcorn bucket, movie ticket, and a drink bottle with straw. These icons aim to give a more vivid meaning to the purpose of the website. The call-to-action text also serves the purpose of drawing in the user, and keeping them focused on their train of thoughts leading to the first visit of the content page. The navbar and the footer has been left out from the landing page, so as to not distract the user from the main purpose of the website. Upon reading, it has been found out that this is actually a common practice, and having navigation links can actually hurt the conversion rates of websites. On this source, this is stated: [Should Landing Pages Have Navigation? (Here's What the Data Says)](https://www.seedprod.com/landing-page-navigation/)
 
+Movie Freeks landing page wireframe
 ![Movie Freeks landing page](./wireframes/movie-freeks-landing.png)
 
 Movie search results page: 
 The website search results page has the input element with the search button for searching the movie, and the section with the movie search results apended to it dynamically. Below it is the comments section where users voice in their opinions about the movie. A rating system is also present here where users leave thier ratings. The ratings in terms of popcorn icons can be seen on the search results div.
 
+Movie Freeks search results wireframe
 ![Movie Freeks search results](./wireframes/search-results-wireframe.png)
 
 Login page: 
 The login page presents the user with a simple login form with a background image of a movie theatre to keep the user focused on the purpose of the website. The user is dynamically informed of the action being performed upon login. For example, if they cick on the post comment button, they will be taken to the login page where the heading will read "login to post a comment" When they login to leave a comment, and "login to leave a review" when the user logs in to leave a review.
 
+Movie Freeks login page wireframe
 ![Movie Freeks login wireframe](./wireframes/login-wireframe.png)
 
 signup wireframe:
@@ -39,4 +42,5 @@ The signup form consists of input element with placeholder text of semantic mean
 
 The signup form also contains a hint element, that helps the user to fill out a field when incorrect text input has been given. This is particularly for the password field, as it is validated with a combination of numbers, letters, and special characters for security. The useful information on what the user has to do in order to fill out a particular field is given on the hint element on top of the form. 
 
+Movie Freeks signup page wireframe
 ![Movie Freeks signup wireframe](./wireframes/signup-wireframe.png)
