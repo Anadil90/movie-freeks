@@ -30,7 +30,7 @@ Movie Freeks search results wireframe
 ![Movie Freeks search results](./wireframes/search-results-wireframe.png)
 
 Login page: 
-The login page presents the user with a simple login form with a background image of a movie theatre to keep the user focused on the purpose of the website. The user is dynamically informed of the action being performed upon login. For example, if they cick on the post comment button, they will be taken to the login page where the heading will read "login to post a comment" When they login to leave a comment, and "login to leave a review" when the user logs in to leave a review.
+The login page presents the user with a simple login form with a background image of a movie theatre to keep the user focused on the purpose of the website. The user is dynamically informed of the action being performed upon login. For example, if they cick on the post comment button, they will be taken to the login page where the heading will read "login to post a comment" when the user logs in to post a comment, and "login to rate a movie" when the user logs in to rate a movie.
 
 Movie Freeks login page wireframe
 ![Movie Freeks login wireframe](./wireframes/login-wireframe.png)
