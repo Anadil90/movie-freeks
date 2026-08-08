@@ -2,6 +2,7 @@
 Movie Freeks is a movie review website that aims to present a straightforward and quick way to determine good movies to watch. The user can find out movies worthwhile watching relatively easily owing to the information architechture that aims for the user to quickly take in the information and make a decision.
 
 ## Features 
+- Users can search for movies and see the corresponding details of the movie, as well the rating for it, presented in a manner that is clear and easy to understand.  
 - A rating system that makes use of effective iconography to let the user know in a flash whether a movie is good or not. The rating system is made to convey to the user a simple "good" or "bad" with the combination of text and icons. Users can log in and rate movies by allocating popcorn icons, the maximum of which is 5, and the minimum of which is 1.
 - A sidebar that cycles the best rated movies with a minimum of 3 popcorns and above.
 - A pleasing interface that makes use of bold colors and text that best makes an impact upon the user.
@@ -53,3 +54,13 @@ The signup form also contains a hint element, that helps the user to fill out a 
 
 Movie Freeks signup page wireframe
 ![Movie Freeks signup wireframe](./wireframes/signup-wireframe.png)
+
+## User Experience Design methodology:
+- Simple, informative, and non complex interface that gives the user exactly what the user asks for.
+- One single page for the user content, that is the search result of the movie.
+- User can search for movies straight away when they click on the button on the landing page, without needing to sign in.
+- User only signs in to post a review of a movie, or rate a certain movie, or comment on it. No unnecessary actions will be carried out by the user.
+- The user is given sensible feedback regarding their actions, when it comes to interacting with forms and the search results.
+- Effective warnings are given to the users to let them know of an error that occurred. 
+- Users are redirected to an error page where the error is explained in plain understandable terms, and then given the option to go back to the search page without using the browser back button.
+- Users should have the option to toggle a darker theme that allows for better readability. This consideration comes to mind when the users are viewing the website on a tablet or mobile device on their bedside in the dark.
