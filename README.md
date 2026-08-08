@@ -64,3 +64,6 @@ Movie Freeks signup page wireframe
 - Effective warnings are given to the users to let them know of an error that occurred. 
 - Users are redirected to an error page where the error is explained in plain understandable terms, and then given the option to go back to the search page without using the browser back button.
 - Users should have the option to toggle a darker theme that allows for better readability. This consideration comes to mind when the users are viewing the website on a tablet or mobile device on their bedside in the dark.
+
+## Information Architecture approach:
+Simple linear structure, where all the pages have the same sort of feel, has information arranged in the same way, provides no surprises, and is not complicated to follow through. The most straightforward process that can be imagined, and does not leave the user to overthink which leads to what.
