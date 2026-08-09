@@ -22,10 +22,10 @@ For the content page body, the background colour of #A8DADC (light cyan), contra
 - When I type in the name of the movie and click the search button, it results in the information of the movie showing up almost instantly, and is arranged in a way such that it is easy to get an idea of the movie in a relatively short time. I can see all the relevant information of the movie such as movie title, year released, director, and plot. I am not provided with too much information, such that I need a bit of time to go through it, which leads to information overload.
 - When the search results for the movie being searched for loads, I can also see the corresponding rating for the movie that helps to make a clearer decision in terms of whether to watch it, or not.
 - I can see a button to log in, and when I click on it, I am able to log in using my credentials to the main page to search for movie reviews. Besides using the button to log in, when I click on the rate movie button, I am taken to the page to log in and I can see the heading that reflects what I am about to do. I can see the same when I click on the button to post a comment. 
-- A page to sign up as a user loads up when I click on the signup button, and on the signup page, I can see a form that gives me helpful feedback to help fill it out.
+- A page to sign up as a user loads up when I click on the signup button, and on the signup page, I can see a form that gives me helpful feedback to help fill it out. The hint element gives me helpful feedback telling me the mistake I made to fill out a field, particularly the password field.
 - I am able to navigate to the about page, where I can read an overview of how the website came to be, and its' purpose.
 
-Changes in content/ User story 
+## Changes in content/ User story 
 A shuffling sidebar  with movie reviews of 3 Pocorn icons and more to be displayed alongside the movie search results was scrapped as a feature and user story of the project, This feature did not make sense to implement, as the main aim of the website is for the user to search for a particular movie and see its review, to be able to find movies to watch by reading reviews. The feature kind of contradicts the purpose. 
 
 ## Project Wireframes
