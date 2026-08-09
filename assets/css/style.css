@@ -1,0 +1,20 @@
+/*landing page styles*/
+#landing-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#landing-title {
+    text-align: center;
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+}
+
+#call-to-action {
+    text-align: center;
+}
