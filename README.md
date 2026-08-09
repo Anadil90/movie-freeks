@@ -24,6 +24,8 @@ For the content page body, the background colour of #A8DADC (light cyan), contra
 - I can see a button to log in, and when I click on it, I am able to log in using my credentials to the main page to search for movie reviews. Besides using the button to log in, when I click on the rate movie button, I am taken to the page to log in and I can see the heading that reflects what I am about to do. I can see the same when I click on the button to post a comment. 
 - A page to sign up as a user loads up when I click on the signup button, and on the signup page, I can see a form that gives me helpful feedback to help fill it out. The hint element gives me helpful feedback telling me the mistake I made to fill out a field, particularly the password field.
 - I am able to navigate to the about page, where I can read an overview of how the website came to be, and its' purpose.
+- A contact page shows up when I click on the contact link on either the navbar, or the footer.
+- I can see a button to toggle a dark theme for better readability of the text on the main content page, the about page, the contact page, the login page and the signup page.
 
 ## Changes in content/ User story 
 A shuffling sidebar  with movie reviews of 3 Pocorn icons and more to be displayed alongside the movie search results was scrapped as a feature and user story of the project, This feature did not make sense to implement, as the main aim of the website is for the user to search for a particular movie and see its review, to be able to find movies to watch by reading reviews. The feature kind of contradicts the purpose. 
