@@ -4,7 +4,6 @@ Movie Freeks is a movie review website that aims to present a straightforward an
 ## Features 
 - Users can search for movies and see the corresponding details of the movie, as well the rating for it, presented in a manner that is clear and easy to understand.  
 - A rating system that makes use of effective iconography to let the user know in a flash whether a movie is good or not. The rating system is made to convey to the user a simple "good" or "bad" with the combination of text and icons. Users can log in and rate movies by allocating popcorn icons, the maximum of which is 5, and the minimum of which is 1.
-- A sidebar that cycles the best rated movies with a minimum of 3 popcorns and above.
 - A pleasing interface that makes use of bold colors and text that best makes an impact upon the user.
 - The ability for the users to leave comments on a particular movie review to add their perspective of the movie direction, plot, acting, or other elements.
 
