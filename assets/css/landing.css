@@ -1,0 +1,55 @@
+/*body styles*/
+body {
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/*landing page content styles*/
+#landing-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30vh auto;
+    color: aliceblue;
+}
+
+#landing-title {
+    text-align: center;
+    font-size: 24px;/*default font size of heading*/
+}
+
+.cta-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.call-to-action {
+    text-align: center;
+}
+
+#call-to-action-text {
+    width: 70vw;
+    text-align: justify;
+}
+
+/*media quieries for the landing page*/
+@media screen and (min-width:320px) and (max-width:425px) {
+    #landing-title {/*the heading for the landing page*/
+        font-size: 18px;
+    }
+
+    #landing-content-container {
+        margin: 5vh auto;
+    }
+
+    #call-to-action-text {/*the call-to-action text on the landing page*/
+        font-size: 14px;
+    }
+
+    .call-to-action {/*the call-to-action button that takes the user to the main page*/
+        width: fit-content;
+        font-size: 12px;
+    }
+}
