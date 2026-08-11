@@ -1,10 +1,14 @@
 /*body styles*/
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Marcellus&family=Oswald:wght@200..700&display=swap');
+
 body {
     background-image: url(../images/landing.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
+
 /*landing page content styles*/
 #landing-content-container {
     display: flex;
@@ -12,6 +16,7 @@ body {
     align-items: center;
     margin: 30vh auto;
     color: aliceblue;
+    font-family: "Marcellus", serif;
 }
 
 #landing-title {
