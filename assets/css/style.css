@@ -36,10 +36,33 @@ footer {
     margin: 90px auto;
     width: 80vw;
     height: auto;
+    text-align: center;
 }
 
 #searchbox {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     margin-top: 15px;
+}
+
+#search-elements-container {
+    display: flex;
+    justify-content: center;
+}
+
+#search-text, .search-movie {
+    border-radius: 0;/*remove default border radius for a uniform look with the search button*/
+}
+
+#search-text {
+    width: 20em;
+    border: none;
+}
+
+.search-movie {
+    color: aliceblue;
+}
+
+.search-heading {
+    font-size: large;
 }

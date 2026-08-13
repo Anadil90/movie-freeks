@@ -20,6 +20,9 @@ For the landing page, a background image of a dark movie theatre was applied to 
 
 ## User stories
 1. When I visit the website for the first time, I am clear about the purpose of the website by reading the text on the landing page. On the page, I can see icons corresponding to watching movies falling down at random from the screen. I have a good idea of what to expect next, when I click the button on the landing page.
+
+Note: There has been changes made to this user story, as outlined in the next section in this readme, which is the changes in content/ user story section. 
+
 User story 1 acceptance criteria and tasks
 ![Movie Freeks landing page user story](./user-stories/user_story_landing.png)
 Completed user story
