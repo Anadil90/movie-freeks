@@ -30,6 +30,11 @@ Completed user story
 
 2. Upon clicking the button on the landing page, I come accross the web page where I can see an input field and a button to search for a movie. 
 
+User story 2 acceptance criteria and tasks
+![Movie Freeks search elements user story](./user-stories/search_elements_user_story.png)
+Completed user story
+![Completed search elements user story](./user-stories/search_elements_visible.png)
+
 3. When I type in the name of the movie and click the search button, it results in the information of the movie showing up almost instantly, and is arranged in a way such that it is easy to get an idea of the movie in a relatively short time. I can see all the relevant information of the movie such as movie title, year released, director, and plot. I am not provided with too much information, such that I need a bit of time to go through it, which leads to information overload.
 4. When the search results for the movie being searched for loads, I can also see the corresponding rating for the movie that helps to make a clearer decision in terms of whether to watch it, or not.
 5. I can see a button to log in, and when I click on it, I am able to log in using my credentials to the main page to search for movie reviews. Besides using the button to log in, when I click on the rate movie button, I am taken to the page to log in and I can see the heading that reflects what I am about to do. I can see the same when I click on the button to post a comment. 
