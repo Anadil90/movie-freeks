@@ -10,6 +10,10 @@
     justify-content: end;
 }
 
+.navbar-brand {
+    margin-left: 15px;
+}
+
 body {
     background-color: #a8dadc;
 }
