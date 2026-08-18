@@ -77,3 +77,27 @@ footer {
 .search-heading {
     font-size: large;
 }
+
+@media screen and (min-width:320px) and (max-width:767px) {
+    #search-elements-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search-text {
+        width: 75vw;
+    }
+
+    .search-movie {
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .search-heading {
+        font-size: small;
+    }
+
+    .navbar-brand {
+        font-size: smaller;
+    }
+}
