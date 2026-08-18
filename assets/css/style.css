@@ -85,7 +85,23 @@ footer {
     }
 
     #search-text {
-        width: 75vw;
+        width: 17rem;
+    }
+
+    .navbar-toggler {
+        font-size: small;
+    }
+
+    #navbarSupportedContent {
+        font-size: small;
+    }
+
+    .navbar-brand {
+        margin-left: 0;
+    }
+
+    .footer-links {
+        font-size: small;
     }
 
     .search-movie {
