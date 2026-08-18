@@ -22,11 +22,18 @@ footer {
     background-color: aliceblue;
 }
 
-#footer-links {
+#footer-links-container {
     height: inherit;/*inherit the height from the footer*/
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-decoration: none
 }
 
 .movie-search-container {
