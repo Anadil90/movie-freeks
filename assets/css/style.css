@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Marcellus&family=Oswald:wght@200..700&display=swap');
+
 /* navbar styles */
 .navbar {
     position: fixed;
@@ -6,7 +8,6 @@
     overflow: hidden;
     background-color: #f5e8d8;
 }
-
 #navbarSupportedContent {
     justify-content: end;
 }
@@ -21,6 +22,7 @@
 /* styles for the body of main-content page*/
 body {
     background-color: #a8dadc;
+    font-family: "Marcellus", serif;
 }
 
 /* footer styles */
@@ -150,5 +152,20 @@ footer {
 
     .navbar-brand {
         font-size: smaller;
+    }
+
+    .movie-info {
+        flex-direction: column;
+    }
+    .movie-poster {
+        width: 70%;
+    }
+
+    #movie-title {
+        font-size: medium;
+    }
+
+    .movie-info-elements {
+        font-size: small;
     }
 }
