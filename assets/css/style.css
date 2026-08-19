@@ -86,7 +86,30 @@ footer {
 }
 
 .movie-info {
-    display: none;
+    margin-top: 10px;
+    flex-direction: row;
+    visibility: hidden;
+    flex-direction: row;
+    gap: 10px;
+    text-align: justify;
+}
+
+.movie-info, #info-container {/*group style properties together and apply them to selected elements*/
+    display: flex;
+    align-items: start
+}
+
+#info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#info-container > .movie-info-elements { /*select child elements of .movie-info and apply styles*/
+    margin-top: 3px;
+    padding: 7px;
+    text-align: justify;
+    background-color: #a8dfdc;/*creates a very subtle background color contrast with the body background*/ 
 }
 
 /* media queries for the main-content page */ 
