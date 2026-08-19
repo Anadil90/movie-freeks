@@ -2,4 +2,6 @@
 search = "pacific rim"
 const apiResponse = fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=68dd180a&t=${search}`)
                         .then(response => response.json())
-                        .then(data => console.log(data))
+                        .then(data => {
+                            
+                        })
