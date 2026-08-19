@@ -87,7 +87,7 @@ footer {
     font-size: large;
 }
 
-.user-search {
+.form-elements-container {
     display: flex;/*fix the issue with the input and button being spaced apart from each other.*/
 }
 
