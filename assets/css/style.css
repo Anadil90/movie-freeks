@@ -87,6 +87,11 @@ footer {
     font-size: large;
 }
 
+.user-search {
+    display: flex;/*fix the issue with the input and button being spaced apart from each other.*/
+}
+
+/*styles for the movie info div*/
 .movie-info {
     margin-top: 10px;
     flex-direction: row;
@@ -158,7 +163,7 @@ footer {
         flex-direction: column;
     }
     .movie-poster {
-        width: 70%;
+        width: 100%;
     }
 
     #movie-title {
