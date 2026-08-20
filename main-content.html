@@ -41,7 +41,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href=#>Log in</a>
+                                <a class="nav-link" href=./login.html>Log in</a>
                             </li>  
                     </ul>
                 </div>
@@ -56,12 +56,14 @@
 
                 <div id="search-elements-container">
                     <form id="user-search">
-                        <input type="text" id="search-text" placeholder="Enter the movie you are looking for">
-                        <button class="btn btn-info search-movie">Search Movie</button>    
+                        <div class="form-elements-container">
+                           <input type="text" id="search-text" name="searchInput" 
+                            placeholder="Enter the movie you are looking for" required/>
+                            <button type="submit" class="btn btn-info search-movie">Search Movie </button>    
+                        </div> 
                     </form>
                 </div>
             </div>
-                 
         </header>
 
         <div id="movie-search-result">
@@ -81,15 +83,26 @@
                 
             </div>
         </div>
+
+        <!--movie comments section-->
+        <div class="movie-comments">
+            <!--comments from users are displayed here-->
+            <h6 class="comment-heading">Got something to say about this movie? Leave your comment</h6>
+            <a href="./login.html" class="btn btn-primary btn-sm post-comment">Comment</a>
+
+            <div class="comments-body"> <!--comment elements appended here dynamically--> ></div>
+        </div>
     </div>
 
+    
+            
     <footer>
         <div id="footer-links-container"><!--footer links with icons representing links-->
             <a href="#" class="footer-links">Home <i class="fa-regular fa-house"></i></a>
             <a href="#" class="footer-links">About <i class="fa-solid fa-question"></i></a>
             <a href="#" class="footer-links">Contact <i class="fa-solid fa-phone"></i></a>
             <a href="#" class="footer-links">sign up <i class="fa-solid fa-clipboard"></i></i></a>
-            <a href="#" class="footer-links">Log in <i class="fa-solid fa-unlock"></i></a>     
+            <a href="./login.html" class="footer-links">Log in <i class="fa-solid fa-unlock"></i></a>     
         </div> 
     </footer>
 
