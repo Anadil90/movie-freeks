@@ -26,8 +26,14 @@ document.getElementById("user-search").addEventListener("submit", function(event
                     moviePlot.html(`<label class=movie-info-label>Plot: </label> ${data.Plot}`); 
                     //set img attribute to display movie poster
                     $(".movie-poster").attr("src", data.Poster);//set the poster image for the movie
-                    $("movie-poster").attr("alt", `Poster image for the movie ${data.Title}`)//show for which movie the poster is for
+
+                    //show for which movie the poster is for
+                    $("movie-poster").attr("alt", `Poster image for the movie ${data.Title}`)
+
                     $(".movie-info").css({"visibility": "visible"})//show the .movie-info div with the search results
+                    $(".post-comment").css({"visibility": "visible"})//show post comment button with search results
+                    $(".movie-comments").css({"visibility": "visible"})//show the movie comments div 
+
         
         })
        event.target.searchInput.value = ""//reset the input field

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/forms.css">
+    <title>Movie Freeks</title>
+</head>
+
+<body>
+    <!--bootstrap navbar-->
+        <nav class="navbar navbar-expand-md bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./main-content.html">
+                    <i class="fa-solid fa-film"></i>
+                    Movie Freeks
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="./main-content.html">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href=#>About</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href=#>Contact</a>
+                            </li> 
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" href="./signup.html">Sign up</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="./login.html">Log in</a>
+                            </li>  
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    <!--end of navbar-->
+
+<section>
+    <h6 class="login-form-heading">Create your Movie Freeks account</h6>
+    <form id="signup">
+        <div class="inputs-container">
+            <label for="firstName">First Name</label><input type="text" id="firstName" name="firstName">
+            <label for="lastName">Last Name</label><input type="text" id="lastName name=lastName">
+            <label for="username">Username</label><input type="text" id="username" name="username">
+            <label for="password">Password</label><input type="text" id="password" name="password">  
+            <label for="email">Email</label><input type="text" id="email" name="email"> 
+        </div>
+        
+        <button class="btn btn-info btn-md signup" type="submit">Signup</button>
+    </form>    
+</section>
+<!--login form-->    
+
+<footer>
+    <div id="footer-links-container"><!--footer links with icons representing links-->
+        <a href="./main-content.html" class="footer-links">Home <i class="fa-regular fa-house"></i></a>
+        <a href="#" class="footer-links">About <i class="fa-solid fa-question"></i></a>
+        <a href="#" class="footer-links">Contact <i class="fa-solid fa-phone"></i></a>
+        <a href="./signup.html" class="footer-links">sign up <i class="fa-solid fa-clipboard"></i></i></a>
+        <a href="./login.html" class="footer-links">Log in <i class="fa-solid fa-unlock"></i></a>     
+    </div> 
+</footer>
+
+<!--jquery-->
+<script src="https://code.jquery.com/jquery-4.0.0.js" integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous"></script>
+<!--bootstrap script-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+crossorigin="anonymous">
+</script>
+<!--font awesome script-->
+<script src="https://kit.fontawesome.com/9b1ff7d312.js" crossorigin="anonymous"></script>
+   
+<!--main script-->
+<script src="./assets/javascript/forms.js"></script>
+</body>
+</html>

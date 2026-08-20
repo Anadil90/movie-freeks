@@ -119,6 +119,19 @@ footer {
     background-color: #a8dfdc;/*creates a very subtle background color contrast with the body background*/ 
 }
 
+.movie-comments {
+    visibility: hidden;
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+.post-comment {
+    visibility: hidden;
+    justify-content: end;
+    margin-left: 15px;
+}
+
 /* media queries for the main-content page */ 
 @media screen and (min-width:320px) and (max-width:767px) {
     #search-elements-container {
