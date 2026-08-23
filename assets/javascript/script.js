@@ -13,29 +13,22 @@ document.getElementById("user-search").addEventListener("submit", function(event
     .then(res => res.json())
     .then(data =>  {
         for(result of data.results) {//loop through the api response and assign the data to variable result
+            console.log(data.results)
 
-            let searchResults;
+            
             //Filter out the api response data to return only the object correponding to the search query
-            const matches = data.results.filter(//Filter the data response from the api directly and return the result that matches with search query 
+             data.results.filter(//Filter the data response from the api directly and return the result that matches with search query 
                 movie => {
-
-                const originalTitle = movie.original_title.toLowerCase();
-                const langIsEnglish = movie.original_language === "en";
-                const searchQueryLowerCased = searchQuery.toLowerCase();
+                    const originalTitle = movie.original_title.toLowerCase();
+                    const langIsEnglish = movie.original_language === "en";
+                    const searchQueryLowerCased = searchQuery.toLowerCase();
                 
-                if(originalTitle === searchQueryLowerCased && langIsEnglish) {
-                    console.log("found match: ", originalTitle, movie)
-                    return movie.original_title.toLowerCase() === searchQuery.toLowerCase()//Transform to lowercase to perform strict matching
-                }
-                    
-                });
                 
-
-        }
-    })
-    .catch(err => console.error(err));
-             //get the elements to represent the returned movie information
-              /*  let movieTitle = $("#movie-title");
+                    if(originalTitle === searchQueryLowerCased && langIsEnglish) {
+                        /*console.log("found match: ", originalTitle, movie)*/
+                        movie.original_title.toLowerCase() === searchQueryLowerCased//Transform to lowercase to perform strict matching
+                         //get the elements to represent the returned movie information
+                let movieTitle = $("#movie-title");
                 let movieYear = $(".movie-year");
                 let movieActors = $(".movie-actors");
                 let movieDirector = $(".movie-director");
@@ -43,23 +36,38 @@ document.getElementById("user-search").addEventListener("submit", function(event
                 
                 console.log(searchInput)
                     //create and append label, along with the data to the corresponding elements for movie info
-                    movieTitle.html(`<label class=movie-info-label>Movie: </label> ${data.Title}`);
-                    movieYear.html(`<label class=movie-info-label>Year: </label> ${data.Year}`);
-                    movieActors.html(`<label class=movie-info-label>Actors: </label> ${data.Actors}`);
-                    movieDirector.html(`<label class=movie-info-label>Director: </label> ${data.Director}`);
-                    moviePlot.html(`<label class=movie-info-label>Plot: </label> ${data.Plot}`); 
+                    movieTitle.html(`<label class=movie-info-label>Movie: </label> ${movie.original_title}`);
+                    movieYear.html(`<label class=movie-info-label>Year: </label> ${movie.overview}`);
+                    movieActors.html(`<label class=movie-info-label>Actors: </label>`);
+                    movieDirector.html(`<label class=movie-info-label>Director: </label>`);
+                    moviePlot.html(`<label class=movie-info-label>Plot: </label>`); 
                     //set img attribute to display movie poster
-                    $(".movie-poster").attr("src", data.Poster);//set the poster image for the movie
+                    $(".movie-poster").attr("src", movie.backdrop_path);//set the poster image for the movie
 
                     //show for which movie the poster is for
-                    $("movie-poster").attr("alt", `Poster image for the movie ${data.Title}`)
+                    $("movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
 
                     $(".movie-info").css({"visibility": "visible"})//show the .movie-info div with the search results
                     $(".post-comment").css({"visibility": "visible"})//show post comment button with search results
-                    $(".movie-comments").css({"visibility": "visible"})//show the movie comments div 
+                    $(".movie-comments").css({"visibility": "visible"})//show the movie comments div
+                    }
+                
+                   
+                
+            });
+                /*let matchedMovie = Object.entries(results);
+                let searchResults;
+                    console.log("matched", matchedMovie.slice(0, 1))*/
+            //Loop through the array of duplicate responses from the search query and return only the first result
+             
 
+            
+        }
+    })
+    .catch(err => console.error(err));
+             
         
     
        event.target.searchInput.value = ""//reset the input field
-       */
+       
 })
