@@ -46,10 +46,10 @@ document.getElementById("user-search").addEventListener("submit", function(event
                 console.log(searchInput)
                     //create and append label, along with the data to the corresponding elements for movie info
                     movieTitle.html(`<label class=movie-info-label>Movie: </label> ${movie.original_title}`);
-                    movieYear.html(`<label class=movie-info-label>Year: </label> ${movie.overview}`);
+                    movieYear.html(`<label class=movie-info-label>Year: </label> ${movie.release_date}`);
                     movieActors.html(`<label class=movie-info-label>Actors: </label>`);
                     movieDirector.html(`<label class=movie-info-label>Director: </label>`);
-                    moviePlot.html(`<label class=movie-info-label>Plot: </label>`); 
+                    moviePlot.html(`<label class=movie-info-label>Plot: </label> ${movie.overview}`); 
                     //set img attribute to display movie poster
                     $(".movie-poster").attr("src", movie.backdrop_path);//set the poster image for the movie
 
