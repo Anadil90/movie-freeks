@@ -99,11 +99,16 @@ footer {
     flex-direction: row;
     gap: 10px;
     text-align: justify;
+
 }
 
 .movie-info, #info-container {/*group style properties together and apply them to selected elements*/
     display: flex;
     align-items: start
+}
+
+.movie-poster {
+    width:100%;/*stretch to full width of flex container*/
 }
 
 #info-container {
