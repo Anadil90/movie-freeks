@@ -94,3 +94,6 @@ Movie Freeks signup page wireframe
 
 ## Information Architecture approach:
 Simple linear structure, where all the pages have the same sort of feel, has information arranged in the same way, provides no surprises, and is not complicated to follow through. The most straightforward process that can be imagined, and does not leave the user to overthink which leads to what.
+
+## Fixed Issues
+1. Searching for a movie with more than one word results in a response object with the original_title property having a : after the first word of the title. For example: original_title: "TRON: legacy". This semicolon creates a mismatch between the search query string and the original_title property, for which the movie result is not shown. This is due to the if staement in line 36 of script.js which carries out a strict equality match between the two, and then executes the block that appends the response data into the corresponding elements on the main-info div in main-content.html. The issue has been fixed by replacing the semicolon with an empty string in its position in the string returned from the original_title property. A comment is present that explains this in line 28 of script.js
