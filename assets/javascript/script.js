@@ -19,10 +19,19 @@ document.getElementById("user-search").addEventListener("submit", function(event
             //Filter out the api response data to return only the object correponding to the search query
              data.results.filter(//Filter the data response from the api directly and return the result that matches with search query 
                 movie => {
-                    const originalTitle = movie.original_title.toLowerCase();
+                    
+                    let originalTitle = movie.original_title.toLowerCase();
                     const langIsEnglish = movie.original_language === "en";
                     const searchQueryLowerCased = searchQuery.toLowerCase();
-                
+
+                    /*
+                    original_title from api response contains a : after the first part of the title. This makes the search 
+                    query string to not match with the original_title property of the api response object. The character
+                    in the string will be removed to create a match and return the object corresponding to the search query.
+                    */
+                    if(originalTitle.includes(":")) {//look for character in string and replace it to match string with search query
+                            originalTitle = movie.original_title.toLowerCase().replace(":", "" )
+                        }
                 
                     if(originalTitle === searchQueryLowerCased && langIsEnglish) {
                         /*console.log("found match: ", originalTitle, movie)*/
