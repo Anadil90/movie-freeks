@@ -51,7 +51,8 @@ document.getElementById("user-search").addEventListener("submit", function(event
                     movieDirector.html(`<label class=movie-info-label>Director: </label>`);
                     moviePlot.html(`<label class=movie-info-label>Plot: </label> ${movie.overview}`); 
                     //set img attribute to display movie poster
-                    $(".movie-poster").attr("src", movie.backdrop_path);//set the poster image for the movie
+                    const posterUrlBase = "https://image.tmdb.org/t/p/w500/";
+                    $(".movie-poster").attr("src", posterUrlBase + movie.poster_path);//set the poster image for the movie
 
                     //show for which movie the poster is for
                     $("movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
