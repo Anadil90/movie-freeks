@@ -15,7 +15,7 @@ document.getElementById("user-search").addEventListener("submit", function(event
     fetch(apiUrl, options)
     .then(res => res.json())
     .then(data =>  {
-        for(result of data.results) {//loop through the api response and assign the data to variable result
+        for(result of data.results) {//Loop through the api response and assign the data to variable result
             console.log(data.results)
 
             //Filter out the api response data to return only the object correponding to the search query
@@ -26,18 +26,18 @@ document.getElementById("user-search").addEventListener("submit", function(event
                     const searchQueryLowerCased = searchQuery.toLowerCase();
 
                     /*
-                    original_title from api response contains a : after the first part of the title. This makes the search 
+                    Original_title from api response contains a : after the first part of the title. This makes the search 
                     query string to not match with the original_title property of the api response object. The character
                     in the string will be removed to create a match and return the object corresponding to the search query.
                     */
-                    if(originalTitle.includes(":")) {//look for character in string and replace it to match string with search query
+                    if(originalTitle.includes(":")) {//Look for character in string and replace it to match string with search query
                             originalTitle = movie.original_title.toLowerCase().replace(":", "" )
                         }
                 
                     if(originalTitle === searchQueryLowerCased && langIsEnglish) {
                         /*console.log("found match: ", originalTitle, movie)*/
                         movie.original_title.toLowerCase() === searchQueryLowerCased//Transform to lowercase to perform strict matching
-                         //get the elements to represent the returned movie information
+                         //Get the elements to represent the returned movie information
                     let movieTitle = $("#movie-title");
                     let movieYear = $(".movie-year");
                     let movieActors = $(".movie-actors");
@@ -45,24 +45,29 @@ document.getElementById("user-search").addEventListener("submit", function(event
                     let moviePlot = $("#movie-plot");
                 
                     console.log(searchInput)
-                    //create and append label, along with the data to the corresponding elements for movie info
-                    movieTitle.html(`<label class=movie-info-label>Movie: </label> ${movie.original_title}`);
-                    movieYear.html(`<label class=movie-info-label>Year: </label> ${movie.release_date}`);
+                    //Create and append label, along with the data to the corresponding elements for movie info
+                    movieTitle.html(`<label class=movie-info-label>Movie: </label> ${movie.original_title}`);//Movie title
+                    movieYear.html(`<label class=movie-info-label>Year: </label> ${movie.release_date}`);//Movie release year
 
                     /*TMDB api does not allow appending query parameters to the api query string with append_to_response. Therefore, a seperate api call
                     to the credits endpoint has to be made to retrieve movie credits*/ 
-                    //fetch movie credits from the TMDB credits endpoint
+                    //Fetch movie credits from the TMDB credits endpoint
                     fetch(`https://api.themoviedb.org/3/movie/${movie.id}/credits`, options)
                     .then(res => res.json())
                     .then(credits => {
-                        /*loop through and return movie cast. Break off loop at the fifth iteration to show the first 5 actors as main actors.*/
+                        /*Loop through and return movie cast. Break off loop at the fifth iteration to show the first 4 actors as main actors.*/
                         for(i = 0; i < credits.cast.length; i++) {
                             console.log("actor", credits.cast[i].original_name, )
                             let actors = credits.cast.slice(0, 4);
                                 console.log(actors)
-                              movieActors.html(`<label class=movie-info-label>Actors: </label>${actors[0].name}, ${actors[1].name}, ${actors[2].name},
-                              ${actors[3].name}
-                             `);
+
+                                //Show movie actors on the actors label element
+                                movieActors.html(`<label class=movie-info-label>Actors: </label> ${actors[0].name}, ${actors[1].name}, ${actors[2].name},
+                                ${actors[3].name}`);
+
+                                //Show movie director on the director label element
+                                movieDirector.html(`<label class=movie-info-label>Director: </label> ${credits.crew[1].name}`);
+                                console.log(credits)
                             if(i < 4) {
                                 continue
                             }
@@ -70,9 +75,10 @@ document.getElementById("user-search").addEventListener("submit", function(event
                                 break
                             }
                         }
+                        
                     })
                     
-                    movieDirector.html(`<label class=movie-info-label>Director: </label>`);
+                    
                     moviePlot.html(`<label class=movie-info-label>Plot: </label> ${movie.overview}`); 
                     //set img attribute to display movie poster
                     const posterUrlBase = "https://image.tmdb.org/t/p/w500/";
