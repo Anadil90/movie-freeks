@@ -30,11 +30,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href=#>About</a>
+                                <a class="nav-link" href="./about.html">About</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href=#>Contact</a>
+                                <a class="nav-link" href="./contact.html">Contact</a>
                             </li> 
                         
                             <li class="nav-item">
@@ -53,12 +53,15 @@
 <section>
     <h6 class="login-form-heading">Create your Movie Freeks account</h6>
     <form id="signup">
+        <div id="hint"></div>
         <div class="inputs-container">
-            <label for="firstName">First Name</label><input type="text" id="firstName" name="firstName">
-            <label for="lastName">Last Name</label><input type="text" id="lastName name=lastName">
-            <label for="username">Username</label><input type="text" id="username" name="username">
-            <label for="password">Password</label><input type="text" id="password" name="password">  
-            <label for="email">Email</label><input type="text" id="email" name="email"> 
+            <label for="firstName">
+                First Name
+            </label><input type="text" id="firstName" name="firstName" minlength="2" required>
+            <label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName" minlength="3" required>
+            <label for="username">Username</label><input type="text" id="username" name="username" required>
+            <label for="password">Password</label><input type="password" id="password" name="password" minlength="8"required>  
+            <label for="email">Email</label><input type="email" id="email" name="email" required> 
         </div>
         
         <button class="btn btn-info btn-md signup" type="submit">Signup</button>
@@ -69,8 +72,8 @@
 <footer>
     <div id="footer-links-container"><!--footer links with icons representing links-->
         <a href="./main-content.html" class="footer-links">Home <i class="fa-regular fa-house"></i></a>
-        <a href="#" class="footer-links">About <i class="fa-solid fa-question"></i></a>
-        <a href="#" class="footer-links">Contact <i class="fa-solid fa-phone"></i></a>
+        <a href="./about.html" class="footer-links">About <i class="fa-solid fa-question"></i></a>
+        <a href="./contact.html" class="footer-links">Contact <i class="fa-solid fa-phone"></i></a>
         <a href="./signup.html" class="footer-links">sign up <i class="fa-solid fa-clipboard"></i></i></a>
         <a href="./login.html" class="footer-links">Log in <i class="fa-solid fa-unlock"></i></a>     
     </div> 
