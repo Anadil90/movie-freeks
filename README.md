@@ -18,6 +18,12 @@ For the content page body, the background colour of #A8DADC (light cyan), contra
 
 For the landing page, a background image of a dark movie theatre was applied to contrast the call-to-action text. This resulted in an appealing landing page that places the main focus on the call-to-action text owing to the darkened portion of the image serving as a contrast for the text. The font color of aliceblue was applied to create that contrast.
 
+## Endpoint usage
+![TMDB attribution](./assets/images/TMDB-attribution-logo.svg)
+The project makes use of two endpoints to fetch the neccesary data pertaining to the movie that is being searched. Both of the endpoints are TMDB (The Movie Database) endpoints. It is necessary to use two endpoints, while the main api url https://api.themoviedb.org/3/search/movie does not return the movie actors and the movie director with the response. To return the actors and the director, TMDB has a seperate endpoint to retrieve the movie credits by making a GET request to https://api.themoviedb.org/3/movie/{movie_id}/credits, where movie_id is the id property of the particular movie object being returned. This is evident in the script.js file. By making use of both the endpoints, the complete movie information that is required by the user can be displayed on the elements of the page for the user.
+
+
+
 ## User stories
 1. When I visit the website for the first time, I am clear about the purpose of the website by reading the text on the landing page. On the page, I can see icons corresponding to watching movies falling down at random from the screen. I have a good idea of what to expect next, when I click the button on the landing page.
 
