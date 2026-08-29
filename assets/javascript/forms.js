@@ -12,6 +12,10 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
     const password = event.target.password.value;
     const email = event.target.email.value;
 
+    
+        //Toggle the display of the hint element to block. Element is only shown when the submit event occurs. 
+        $("#hint").addClass("space");
+
     /**Function checks the form input fields for valid user input, and then 
      * allows the user registration data to be pushed to the store array to
      * hold the user data
@@ -77,19 +81,20 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
             return false;
         }
 
-        //check if email is of the proper format
+        //Check if email is of the proper format
         if(!properEmailFormat(email)) {
-            hint.text("Email address must be of the following format: john.doe@gmail.com. Make sure all the characters are present")
+            hint.text("Email address must be like the following example format: john.doe@gmail.com, or john@gmail.com. Make sure all the characters are present")
             return false;
         }
-        
-        return true;
 
-        
+        //Check to see whether the passoword contains the combination of characters for security
+        if(!securePassword(password)) {
+            return false;
+        }
 
+        return true;   
     } 
 
-    
     /**Function checks the form email input to determine whether the user has entered an email adddress 
      * that is of the proper format by running the user email input through a regex pattern. When the 
      * email input matches that of the one stated in the escape regex pattern, the email is valid.
@@ -98,6 +103,31 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
         //Match pattern to the following format: characters + @ + domain name. (example@gmail.com)
         const regexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;//Check to see if the entered email has an @, a domain, and a . after the domain, and no spaces
         return regexPattern.test(email);
+    }
+
+    function securePassword(password) {
+        //Create patterns to test for and validate
+        const upperCaseTest = /[A-Z]/.test(password);//Test case for the regex to match when upper case letters are present
+        const numbersPresent = /[0-9]/.test(password);//Test case for numbers being present.
+        const specialCharactersPresent = /[!@#&.]/.test(password);//Test case for characters !, @, #, &, and . being present 
+
+        //Check for a secure password
+        if (!upperCaseTest) {
+            hint.text("Password must contain at least one uppercase letter");
+            return false;
+        }
+            
+        if (!numbersPresent) {
+            hint.text("Password must contain at least one number");
+            return false;
+        }
+
+        if (!specialCharactersPresent) {
+            hint.text("Password must contain at least one special character from the following: ! @ # & .");
+            return false;
+        }
+
+        return true;
     }
     
     if(!validateFormData()) {
