@@ -29,6 +29,7 @@ body {
 
 .navbar-brand {
     margin-left: 15px;
+    font-size: large;
 }
 
 /* footer styles */
@@ -104,6 +105,11 @@ section {
 }
 
 @media screen and (max-width:767px) {/*keep the styles applied from mobile to just before the tablet breakpoint*/
+
+    .navbar-brand {
+        font-size: medium;
+    }
+
     #signup {
         width: 15em;
     }
