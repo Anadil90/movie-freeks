@@ -51,9 +51,9 @@
     <!--end of navbar-->
 
 <section>
-    <h6 class="login-form-heading">Create your Movie Freeks account</h6>
+    <h6 class="signup-form-heading">Create your Movie Freeks account</h6>
     <form id="signup">
-        <div id="hint"></div>
+        <div id="hint"></div><!--Element hidden by default. Show when submit event occurs-->
         <div class="inputs-container">
             <label for="firstName">
                 First Name
@@ -61,7 +61,7 @@
             <label for="lastName">Last Name</label><input type="text" id="lastName" name="lastName">
             <label for="username">Username</label><input type="text" id="username" name="username">
             <label for="password">Password</label><input type="password" id="password" name="password">  
-            <label for="email">Email</label><input type="email" id="email" name="email"> 
+            <label for="email">Email</label><input id="email" name="email"> 
         </div>
         
         <button class="btn btn-info btn-md signup" type="submit">Signup</button>

@@ -8,7 +8,7 @@ body {
     font-family: "Marcellus", serif;
 }
 
-/* navbar styles */
+/*navbar styles */
 .navbar {
     position: fixed;
     top: 0;
@@ -20,6 +20,9 @@ body {
     justify-content: end;
 }
 
+.navbar-toggler {
+    font-size: smaller;/*adjust the button size for mobile screens*/
+}
 .navbar-nav {
     margin-right: 20px;
 }
@@ -51,7 +54,7 @@ footer {
     text-decoration: none
 }
 
-/*login form styles*/ 
+/*signup form styles*/ 
 section {
     display: flex;
     flex-direction: column;
@@ -60,11 +63,13 @@ section {
     width: min-content;
     
 }
-form {
+
+#signup {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
+    width: 30em;/*default width for wider screens*/
 }
 
 .inputs-container {
@@ -81,12 +86,25 @@ form {
     color: aliceblue;
 }
 
-.login-form-heading {
-    color: azure;
+.signup-form-heading {
+    background-color: rgba(255, 255, 250, 0.4);
+    color: black;
+    padding: 5px;
     margin: 10px;
+    width: fit-content;
 }
-
+    
 #hint {
     margin-bottom: 3px;
     background-color:azure;
+}
+
+.space {/*this class is toggled when form submission event occurs*/
+    padding: 7px;/*apply padding around the hint element*/
+}
+
+@media screen and (max-width:767px) {/*keep the styles applied from mobile to just before the tablet breakpoint*/
+    #signup {
+        width: 15em;
+    }
 }
