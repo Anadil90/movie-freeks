@@ -78,7 +78,7 @@ Email unfilled
 ## Scenario:
 The user inputs only 1 letter as the first name and attempts to submit the form
 
-**Given** the user is on the signup page, **when** the inputs a single letter as the first name, **then** the user is propmpted with a message on the hint element stating that the first name should be of at least 2 letters. 
+**Given** the user is on the signup page, **when** the user inputs a single letter as the first name, **then** the user is propmpted with a message on the hint element stating that the first name should be of at least 2 letters. 
 
 Expected: The user should be warned when a first name less than 2 letters is attempted to be entered as the first name. The letters rule owes to the fact that some people may have first names of 2 letters or a short abbreviated form. For example: Bo, Hu, or Md (short abbreviated form for Muhammed). The first name field could have been set to 3 or more than that, but the developer realizes that some poeple may indeed have very short first names, and this pop up prompt acknowledges that fact. With 3 or more characters, the 2 letter names would not be possible to be entered due to the length being less than 3 or so. This can result in major user frustration. The people with short names will not be left out. 
 
@@ -89,6 +89,23 @@ Test result: The form hint element shows a message letting the user know that at
 First name less than 2 letters
 
 ![First name not of 2 letters](../assets/images/first_name_length.png)
+
+## Scenario
+The user inputs a username that is of less than 3 characters and attemtps to submit the signup form
+
+**Given** the user is on the signup page, **when** the user tries to submit the signup form by inputting a username which is less than 3 characters, **then** the user is propmpted with a message on the hint element stating that the username must contain at least 3 characters.
+
+Expected: The user is shown a warning message when the username field has been entered to be less than 3 characters long, alog with an example of the username that should be entered.
+
+Test conducted: Type in a username less than 3 characters on the username field and test to see whether the warning message shows up on the hint element.
+
+Test result: Attempting to submit the form with the username being less than 3 characters results in the hint element showing the warning message that the username must be of at least 3 characters. An example is also seen on the hint element that makes it clear how long the username should be, and also what kind of username the user can choose to enter. The screenshot below shows the warning prompt on the hint element.
+
+Username less than 3 characters
+
+![Username less than 3 characters](../assets/images/username_length.png)
+
+
 
 
 
