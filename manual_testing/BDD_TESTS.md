@@ -24,7 +24,7 @@ For this project, BDD forms the proper testing procedure as:
 - This kind of approach helps to test the features in order to ensure that the user expectations can be met.
 
 ## Concluded BDD tests
-The tests are outlined in scenarios, in which the user goal is defined, and then the situations that follow the user interaction along with the outcome that should occur. They are outline in the format:
+The tests are outlined in scenarios, in which the user goal is defined, and then the situations that follow the user interaction along with the outcome that should occur. They are outlined in the format:
 Given - A specific event, such as when the user is logged in.
 When - A particular action is carried out, such as clicking the log out button.
 Then - A set of observable consequences occur, such as the user has been logged out and the user is shown feedback to confirm that the action has occured.
@@ -34,4 +34,28 @@ The user does not fill in any form fields and clicks the submit button on the fo
 
 **Given** the user is on the sign up page, **when** the user accidently cicks on the submit button without filling in form fields, **then** the user is warned that an empty form cannot be submitted.
 
+The test has been concluded with success. When the user attempts to submit an empty form, the user is prompted with a message on the hint element of the form stating that the user cannot sumbit an empty form. 
+![Empty form](../assets/images/form_empty.png)
+
+### Scenario:
+The user does not fill out one field of a form and then clicks on the submit button
+
+**Given** the user is on the signup page, **when** the user accidentally leaves out one field empty, **then** the user is propmpted with a message on the hint element stating that the particular field must be filled in. 
+
+The form has been tested with the first name field empty, and it results in the message displaying in the hint element warning the user of the mistake. Test has been concluded to be successful. The screenshots below show each empty field being validated.
+
+Fist name unfilled
+![Empty form field submission](../assets/images/test_empty_field.png)
+
+Last name unfilled
+![Last name unfilled](../assets/images/last_name_unfilled.png)
+
+Username unfilled
+![Username unfilled](../assets/images/username_unfilled.png)
+
+Password unfilled
+![Password unfilled](../assets/images/password_unfilled.png)
+
+Email unfilled
+![Email unfilled](../assets/images/email_unfilled.png)
 
