@@ -56,8 +56,9 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 30vh auto;
+    margin: 20vh auto;
     width: min-content;
+    
 }
 form {
     display: flex;
@@ -73,4 +74,19 @@ form {
     color: darkblue;
     padding: 10px;
 
+}
+
+.signup {
+    border-radius: 0;
+    color: aliceblue;
+}
+
+.login-form-heading {
+    color: azure;
+    margin: 10px;
+}
+
+#hint {
+    margin-bottom: 3px;
+    background-color:azure;
 }
