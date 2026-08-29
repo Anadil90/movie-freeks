@@ -41,6 +41,7 @@ Test conducted: Click on the signup button and see whether the warning message s
 Test result: The test has been concluded with success. When the user attempts to submit an empty form, the user is prompted with a message on the hint element of the form stating that the user cannot sumbit an empty form, as can be seen on the screenshot below.
 
 Empty form submission
+
 ![Empty form](../assets/images/form_empty.png)
 
 ### Scenario:
@@ -54,19 +55,24 @@ Test conducted: Leave out one particular field on the form and test to see if th
 
 Test result: The form has been tested with the first name field empty, and it results in the message displaying in the hint element warning the user of the mistake. The same is for the other form fields that are left unfilled. Test has been concluded to be successful. The screenshots below show each empty field being validated.
 
-Fist name unfilled
+First name unfilled
+
 ![Empty form field submission](../assets/images/test_empty_field.png)
 
 Last name unfilled
+
 ![Last name unfilled](../assets/images/last_name_unfilled.png)
 
 Username unfilled
+
 ![Username unfilled](../assets/images/username_unfilled.png)
 
 Password unfilled
+
 ![Password unfilled](../assets/images/password_unfilled.png)
 
 Email unfilled
+
 ![Email unfilled](../assets/images/email_unfilled.png)
 
 ## Scenario:
@@ -79,6 +85,8 @@ Expected: The user should be warned when a first name less than 2 letters is att
 Test conducted: Attempt to enter a first name with 1 letter, and see whether the hint element text pops up warning the user of the name being less than 2 letters.
 
 Test result: The form hint element shows a message letting the user know that at least 2 letters need to be present for the first name. The test has been concluded to be successful, as the screenshot below shows. 
+
+First name less than 2 letters
 
 ![First name not of 2 letters](../assets/images/first_name_length.png)
 
