@@ -9,7 +9,7 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
     const first_name = event.target.firstName.value;
     const last_name = event.target.lastName.value;
     const username = event.target.username.value;
-    const password = event.target.username.value;
+    const password = event.target.password.value;
     const email = event.target.email.value;
 
     /**Function checks the form input fields for valid user input, and then 
@@ -17,28 +17,41 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
      * hold the user data
      */
     function validateFormData() {
-        //Checks to ensure that no input field is empty
-        if(first_name.length < 1) {
+        //Assign each empty form field to corresponding variables to be validated for empty form submission
+        const firstNameEmpty = first_name.length < 1;
+        const lastNameEmpty = last_name.length < 1;
+        const usernameEmpty = username.length < 1;
+        const passwordEmpty = password.length < 1;
+        const emailEmpty = email.length < 1;
+        
+        //check to ensure an empty form is not submitted
+        if(firstNameEmpty && lastNameEmpty && usernameEmpty && passwordEmpty && emailEmpty) {//Prevent form data from being submitted when all fields are empty 
+            hint.text("An empty form cannot be sumbitted. Please fill in the fields.")
+            return false;
+        }
+
+        //Check if any individual form field is not filled in and warn user when field is empty
+        if(firstNameEmpty) {
             hint.text("First name is required to register");
             return false;
         }
 
-        if(last_name.length < 1) {
+        if(lastNameEmpty) {
             hint.text("Last name is required to register");
             return false;
         }
 
-        if(username.length < 1) {
+        if(usernameEmpty) {
             hint.text("Username is required");
             return false;
         }
 
-        if(password.length < 1) {
+        if(passwordEmpty) {
             hint.text("Password is required");
             return false;
         }
 
-        if(email.length < 1) {
+        if(emailEmpty) {
             hint.text("Email is required to register");
             return false;
         }
@@ -83,8 +96,10 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
             commentText: undefined
         }
     }
+
     store.push(userData);//Push the userData object into the store array
-    hint.text("Registration successful! You can now log in to your account.")
+    hint.text("Registration successful! You can now log in to your account.")//Let the user know of the registration sucess
     }
 
+    registerUser()
 })
