@@ -76,8 +76,29 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
             hint.text("Password must be at least 8 characters long");
             return false;
         }
+
+        //check if email is of the proper format
+        if(!properEmailFormat(email)) {
+            hint.text("Email address must be of the following format: john.doe@gmail.com. Make sure all the characters are present")
+            return false;
+        }
+        
         return true;
+
+        
+
     } 
+
+    
+    /**Function checks the form email input to determine whether the user has entered an email adddress 
+     * that is of the proper format by running the user email input through a regex pattern. When the 
+     * email input matches that of the one stated in the escape regex pattern, the email is valid.
+     */
+    function properEmailFormat(email) {//run the escape regex function here and check for a valid email address format
+        //Match pattern to the following format: characters + @ + domain name. (example@gmail.com)
+        const regexPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;//Check to see if the entered email has an @, a domain, and a . after the domain, and no spaces
+        return regexPattern.test(email);
+    }
     
     if(!validateFormData()) {
         return;//stop the function execution at this point and prevent the user data from being stored
