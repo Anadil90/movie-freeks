@@ -91,7 +91,7 @@ First name less than 2 letters
 ![First name not of 2 letters](../assets/images/first_name_length.png)
 
 ## Scenario
-The user inputs a username that is of less than 3 characters and attemtps to submit the signup form
+The user inputs a username that is of less than 3 characters and attemtps to submit the signup form.
 
 **Given** the user is on the signup page, **when** the user tries to submit the signup form by inputting a username which is less than 3 characters, **then** the user is propmpted with a message on the hint element stating that the username must contain at least 3 characters.
 
@@ -104,6 +104,19 @@ Test result: Attempting to submit the form with the username being less than 3 c
 Username less than 3 characters
 
 ![Username less than 3 characters](../assets/images/username_length.png)
+
+## Scenario:
+The user enters a password of less than 8 characters length and atempts to submit the form.
+
+**Given** the user is on the signup page, **when** the user tries to submit the signup form by entering a password which is less than 8 characters, **then** the user is propmpted with a message on the hint element stating that the password must contain at least 8 characters.
+
+Expected: A message is shown on the hint element for the user stating that the password field must be at least 8 characters long. 
+
+Test conducted: Enter a password of less than 3 characters and see if the message is visible on the hint element stating the user must type in a password that is of the minimum length specified. 
+
+Test result: With the user entering in a password less than the minimum length specified, the hint element text pops up immediately, showing the user that the password is not of the required length. Test has been concluded to be successful by entering a password of 3 characters, as the screenshot below shows.
+
+![Password less than 8 characters](../assets/images/password_minimum_length.png)
 
 
 
