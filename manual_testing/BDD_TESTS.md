@@ -118,6 +118,21 @@ Test result: With the user entering in a password less than the minimum length s
 
 ![Password less than 8 characters](../assets/images/password_minimum_length.png)
 
+## scenario:
+The user types in an invalid email that does not match the standard format for emails
+
+**Given** the user is on the signup page, **when** the user tries to submit the signup form by entering an email containing invalid characters, or missing characters, **then** the user is prompted with a message on the hint element stating that the email is of an invalid format, and examples are given to the user to help them correct the mistake.
+
+Expected: The hint element pops up when the user inputs an email that does not match the required format
+
+Test conducted: Fill in just text, miss a special character and see whether the message warning the user of the invalid email pops up.
+
+Test result: With an invalid email missing an @, or the . after the first part of the email, or simpy a text without any of the matching characters, the warning message shows on the hint element letting the user know of the error. Two example formats are also shown to help the ser correctly fill in the email field. Test is concluded to be successful based on the fact that the form does not allow the registration process to continue untill the proper email format has been typed in. The screenshot for the email validation test below shows the message that pops up when the email is incorrectly filled in.
+
+Email format validation
+
+![Email validation test](../assets/images/email_validation.png)
+
 
 
 
