@@ -34,7 +34,13 @@ The user does not fill in any form fields and clicks the submit button on the fo
 
 **Given** the user is on the sign up page, **when** the user accidently cicks on the submit button without filling in form fields, **then** the user is warned that an empty form cannot be submitted.
 
-The test has been concluded with success. When the user attempts to submit an empty form, the user is prompted with a message on the hint element of the form stating that the user cannot sumbit an empty form. 
+Expected: The signup form should not allow the user registration to proceed whith an empty form.
+
+Test conducted: Click on the signup button and see whether the warning message successfully pops up on the hint element.
+
+Test result: The test has been concluded with success. When the user attempts to submit an empty form, the user is prompted with a message on the hint element of the form stating that the user cannot sumbit an empty form, as can be seen on the screenshot below.
+
+Empty form submission
 ![Empty form](../assets/images/form_empty.png)
 
 ### Scenario:
@@ -42,7 +48,11 @@ The user does not fill out one field of a form and then clicks on the submit but
 
 **Given** the user is on the signup page, **when** the user accidentally leaves out one field empty, **then** the user is propmpted with a message on the hint element stating that the particular field must be filled in. 
 
-The form has been tested with the first name field empty, and it results in the message displaying in the hint element warning the user of the mistake. Test has been concluded to be successful. The screenshots below show each empty field being validated.
+Expected: The user should be warned when a certain form field has not been filled out, and the form is attempted to be submitted
+
+Test conducted: Leave out one particular field on the form and test to see if the warning message shows on the hint element. Repeat the process for each form field left empty, and the others filled in.
+
+Test result: The form has been tested with the first name field empty, and it results in the message displaying in the hint element warning the user of the mistake. The same is for the other form fields that are left unfilled. Test has been concluded to be successful. The screenshots below show each empty field being validated.
 
 Fist name unfilled
 ![Empty form field submission](../assets/images/test_empty_field.png)
@@ -58,4 +68,19 @@ Password unfilled
 
 Email unfilled
 ![Email unfilled](../assets/images/email_unfilled.png)
+
+## Scenario:
+The user inputs only 1 letter as the first name and attempts to submit the form
+
+**Given** the user is on the signup page, **when** the inputs a single letter as the first name, **then** the user is propmpted with a message on the hint element stating that the first name should be of at least 2 letters. 
+
+Expected: The user should be warned when a first name less than 2 letters is attempted to be entered as the first name. The letters rule owes to the fact that some people may have first names of 2 letters or a short abbreviated form. For example: Bo, Hu, or Md (short abbreviated form for Muhammed). The first name field could have been set to 3 or more than that, but the developer realizes that some poeple may indeed have very short first names, and this pop up prompt acknowledges that fact. With 3 or more characters, the 2 letter names would not be possible to be entered due to the length being less than 3 or so. This can result in major user frustration. The people with short names will not be left out. 
+
+Test conducted: Attempt to enter a first name with 1 letter, and see whether the hint element text pops up warning the user of the name being less than 2 letters.
+
+Test result: The form hint element shows a message letting the user know that at least 2 letters need to be present for the first name. The test has been concluded to be successful, as the screenshot below shows. 
+
+![First name not of 2 letters](../assets/images/first_name_length.png)
+
+
 
