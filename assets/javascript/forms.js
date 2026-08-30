@@ -158,7 +158,7 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
 })
 
 
-
+//login form submit event handler handles login procedure
 $("#login").submit(function(event) {
     const user = event.target.username.value;
     const password = event.target.password.value
@@ -176,6 +176,5 @@ $("#login").submit(function(event) {
     else {//If no user details don't match, prompt the user of the login credentials being incorrect
         $("#login-hint").text("Your username or password is not correct.")
     }
-
     
 })
