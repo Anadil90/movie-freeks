@@ -95,6 +95,8 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         
                         $(".post-comment").show()//show post comment button with search results
                         $(".movie-comments").show()//show the movie comments div
+
+
                     }
 
                     else {

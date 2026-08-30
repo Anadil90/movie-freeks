@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Marcellus&family=Oswald:wght@200..700&display=swap');
+
+body {
+    background-color: #a8dadc;
+    font-family: "Marcellus", serif;
+}
+
+/*navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f5e8d8;
+}
+#navbarSupportedContent {
+    justify-content: end;
+}
+
+.navbar-toggler {
+    font-size: smaller;/*adjust the button size for mobile screens*/
+}
+.navbar-nav {
+    margin-right: 20px;
+}
+
+.navbar-brand {
+    margin-left: 15px;
+    font-size: large;
+}
+
+/* footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: aliceblue;
+}
+
+#footer-links-container {
+    height: inherit;/*inherit the height from the footer*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-decoration: none
+}
+
+/*signup form styles*/ 
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20vh auto;
+    width: min-content;
+    
+}
+
+/* footer styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: aliceblue;
+}
+
+#footer-links-container {
+    height: inherit;/*inherit the height from the footer*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-decoration: none
+}
+
+.footer-links:hover {
+    color: #17a2b8;
+}
+
+.footer-links i {
+    margin-left: 5px;
+}
+
+
+p {
+    margin-top: 40px;
+}
+/*Media queries for mobile devices*/
+@media (max-width: 576px) {
+    section.container {
+        margin-top: 20px;
+    }
+
+    #footer-links-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
