@@ -22,7 +22,124 @@ For the landing page, a background image of a dark movie theatre was applied to 
 ![TMDB attribution](./assets/images/TMDB-attribution-logo.svg)
 The project makes use of two endpoints to fetch the neccesary data pertaining to the movie that is being searched. Both of the endpoints are TMDB (The Movie Database) endpoints. It is necessary to use two endpoints, while the main api url https://api.themoviedb.org/3/search/movie does not return the movie actors and the movie director with the response. To return the actors and the director, TMDB has a seperate endpoint to retrieve the movie credits by making a GET request to https://api.themoviedb.org/3/movie/{movie_id}/credits, where movie_id is the id property of the particular movie object being returned. This is evident in the script.js file. By making use of both the endpoints, the complete movie information that is required by the user can be displayed on the elements of the page for the user.
 
+## Deployment Process
+The project repository is pushed to GitHub with the complete file structure:
 
+/assets/css/
+
+/assets/javascript/
+
+/assets/images/
+
+All HTML pages
+
+Supporting documentation
+
+GitHub Pages is enabled by navigating to:
+Settings → Pages → Source → Deploy from a branch,
+and selecting the main branch with the /root directory.
+
+GitHub Pages automatically builds and deploys the site using GitHub Actions.
+Once the build completes successfully, the website becomes available at the GitHub Pages URL.
+
+Node Version Issue and Resolution
+During deployment, GitHub Pages encountered a build failure due to the deprecation of Node 20 on GitHub Actions runners. This caused the Movie Freeks site to fail building, resulting in missing updates on the deployed version—particularly the movie actors feature.
+
+As documented in the GitHub changelog (“Deprecation of Node 20 on GitHub Actions runners”), the fix involved explicitly instructing GitHub Actions to use Node 24 for the build environment. After adding the required environment variable to the workflow configuration, the deployment pipeline resumed normal operation and the updated features appeared correctly on the live site.
+
+Post‑Deployment Verification
+After each deployment, the following checks are performed:
+
+Ensure all pages load correctly (landing page, main content, login, signup, about, contact).
+
+Verify TMDB API calls return expected movie data.
+
+Confirm that user interactions (searching, commenting, logging in, signing up) behave as intended.
+
+Validate that CSS and background images load correctly across all pages.
+
+Test the site on both desktop and mobile browsers to ensure responsiveness.
+
+Hosting Characteristics
+The site is fully static and requires no backend server.
+
+All user data (signup, login, comments) is handled client‑side using localStorage.
+
+API calls to TMDB are made directly from the browser using JavaScript.
+
+No server‑side rendering or templating is used; all content is dynamically injected into the DOM.
+
+How to Run Locally
+Movie Freeks is a fully client‑side project, so running it locally requires no backend server or build tools. All pages, scripts, and stylesheets load directly in the browser. Follow the steps below to run the project on your machine.
+
+1. Clone or download the repository
+You can either clone the project using Git:
+
+Code
+git clone https://github.com/Anadil90/movie-freeks.git
+or download the ZIP file from GitHub and extract it to any folder on your computer.
+
+2. Open the project folder
+Navigate into the project directory. You should see the full structure:
+
+Code
+/assets/css
+/assets/javascript
+/assets/images
+index.html
+main-content.html
+login.html
+signup.html
+about.html
+contact.html
+3. Open the landing page in your browser
+Because the project is fully static, you can simply open the landing page directly:
+
+Double‑click index.html, or
+
+Right‑click → “Open With” → choose your browser
+
+This will load the website exactly as it appears on GitHub Pages.
+
+4. Ensure API calls work
+Movie Freeks uses TMDB’s public API. For local development:
+
+Make sure your internet connection is active
+
+The TMDB API key in script.js must be valid
+
+No additional configuration is required
+
+All movie search features will work normally as long as TMDB is reachable.
+
+5. Optional: Use a local development server
+Some browsers restrict certain features (like fetch() from local files).
+If you encounter issues, you can run a lightweight local server:
+
+Using VS Code:
+Install the Live Server extension
+
+Right‑click index.html → “Open with Live Server”
+
+Using Node:
+Code
+npx serve .
+Using Python:
+Code
+python3 -m http.server
+This is optional but recommended for consistent behavior across browsers.
+
+6. LocalStorage behavior
+User accounts, login data, and comments are stored in localStorage.
+When running locally:
+
+Data persists between page reloads
+
+Data is isolated to your browser
+
+Clearing browser storage resets all user accounts
+
+No backend database is required.
 
 ## User stories
 1. When I visit the website for the first time, I am clear about the purpose of the website by reading the text on the landing page. On the page, I can see icons corresponding to watching movies falling down at random from the screen. I have a good idea of what to expect next, when I click the button on the landing page.
