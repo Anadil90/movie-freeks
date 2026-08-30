@@ -12,8 +12,7 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
     const password = event.target.password.value;
     const email = event.target.email.value;
 
-    
-        //Toggle the display of the hint element to block. Element is only shown when the submit event occurs. 
+        //Toggle the class to apply the class only shown when the submit event occurs. 
         $("#hint").addClass("space");
 
     /**Function checks the form input fields for valid user input, and then 
@@ -27,7 +26,7 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
         const usernameEmpty = username.length < 1;
         const passwordEmpty = password.length < 1;
         const emailEmpty = email.length < 1;
-        
+
         //check to ensure an empty form is not submitted
         if(firstNameEmpty && lastNameEmpty && usernameEmpty && passwordEmpty && emailEmpty) {//Prevent form data from being submitted when all fields are empty 
             hint.text("An empty form cannot be sumbitted. Please fill in the fields.")
@@ -87,7 +86,7 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
             return false;
         }
 
-        //Check to see whether the passoword contains the combination of characters for security
+        //Check to see whether the password contains the combination of characters for security
         if(!securePassword(password)) {
             return false;
         }
@@ -136,21 +135,47 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
 
     function registerUser() {
         let userData = { //Take in data from the signup form and create a user object as database
-        firstName: event.target.firstName.value,
-        lastName: event.target.lastName.value,
-        username: event.target.username.value,
-        password: event.target.password.value,
-        email: event.target.email.value,
+        firstName: first_name,
+        lastName: last_name,
+        username: username,
+        password: password,
+        email: email,
         comment: {//The values of the keys of this object are set when the user posts a comment
             date: undefined,
             title: undefined,
             commentText: undefined
         }
+        
     }
 
     store.push(userData);//Push the userData object into the store array
     hint.text("Registration successful! You can now log in to your account.")//Let the user know of the registration sucess
     }
 
-    registerUser()
+    
+    registerUser()//Register the user with the form data
+    localStorage.setItem("users", JSON.stringify(store));//Set local storage for the store object
+})
+
+
+
+$("#login").submit(function(event) {
+    const user = event.target.username.value;
+    const password = event.target.password.value
+    event.preventDefault()//prevent the form action attribute from prematurely redirecting away from page
+    console.log(store.username, user, password,  store.password)
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];//load users from the local storage if they exist, otherwise declare empty array.
+    const foundUser = users.find(found => found.username === user && found.password === password);//Get users from the localstorage and find matching user
+
+    //If user if found, redirect to the main-content page
+    if(foundUser) {
+        //Replicate the behaviour of a button click, and navigate back to the main-content page
+        $(location).attr('href', '/main-content.html');  
+    }
+    else {//If no user details don't match, prompt the user of the login credentials being incorrect
+        $("#login-hint").text("Your username or password is not correct.")
+    }
+
+    
 })

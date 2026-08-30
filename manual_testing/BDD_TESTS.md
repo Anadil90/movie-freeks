@@ -133,7 +133,48 @@ Email format validation
 
 ![Email validation test](../assets/images/email_validation.png)
 
+## Scenario:
+The user enters a password that only contains letters
 
+**Given** the user is on the signup page, **when** the user tries to submit the signup form by entering a password with only letters, **then** the user is prompted with a message stating that the password should contain at least one uppercase letter. 
+
+Expected: The user is shown a message on the hint element informing that the password must contain at least one uppercase letter.
+
+Test conducted: Enter only letters and see whether the hint element shows the correct warning message.
+
+Test result: The hint element successfully shows the user the message that one uppercase letter must be present in the password, as can be seen in the attached screenshot below.
+
+Password not containing Uppercase letter
+![Password missing uppercase letter](../assets/images/password_uppercase.png)
+
+## Scenario:
+The user enters a password that contains lowercase letters and one uppercase letter
+
+**Given** the user is on the signup page, **when** the user tries to submit the form by entering a password with lowercase letters and one uppercase letter, **then** the user is prompted with a message stating that the password should contain at least one number. 
+
+Expected: The user is shown a message on the hint element informing that the password must contain at least one number.
+
+Test conducted: Enter combination of lowercase letters and one uppercase letter and see whether the hint element shows the proper warning message.
+
+Test result: The hint element shows the user the warning message that one number must be present in the password, as can be seen in the screenshot below.
+
+Password not containing a number
+![Password missing number](../assets/images/password_number.png)
+
+
+## Scenario:
+The user enters a combination of lowercase letters, one uppercase letter and a number, but no special characters
+
+**Given** the user is on the signup page, **when** the user tries to submit the form by entering a password with lowercase letters, one uppercase letter, a number and no special characters, **then** the user is prompted with a message stating that the password should contain at least one special character from the list shown in the example of the hint element message. 
+
+Expected: The user is shown a message on the hint element informing that the password must contain at least one special character.
+
+Test conducted: Enter combination of lowercase letters and one uppercase letter, a number and see whether the hint element shows the warning message regarding including one special character.
+
+Test result: The hint element displays to the user that one special character needs to be present in the password, which the screenshot below shows.
+
+Password not containing special character
+![Password missing special character](../assets/images/password_special_char.png)
 
 
 

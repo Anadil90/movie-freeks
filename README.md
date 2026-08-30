@@ -42,9 +42,26 @@ Completed user story
 ![Completed search elements user story](./user-stories/search_elements_visible.png)
 
 3. When I type in the name of the movie and click the search button, it results in the information of the movie showing up almost instantly, and is arranged in a way such that it is easy to get an idea of the movie in a relatively short time. I can see all the relevant information of the movie such as movie title, year released, director, and plot. I am not provided with too much information, such that I need a bit of time to go through it, which leads to information overload.
-4. When the search results for the movie being searched for loads, I can also see the corresponding rating for the movie that helps to make a clearer decision in terms of whether to watch it, or not.
+
+User story 3 acceptance criteria and tasks
+![Movie Freeks movie search results](./user-stories/movie_search_user_story.png)
+Completed user story
+![Completed movie search results user story](./user-stories/movie_search_results_completed.png)
+4. When the search results for the movie being searched for loads, I can also see the corresponding rating for the movie that helps to make a clearer decision in terms of whether to watch it, or not - This user story is a could have, which has been targeted to be released in a future iteration that will also aom to improve the website layout and design.
+
 5. I can see a button to log in, and when I click on it, I am able to log in using my credentials to the main page to search for movie reviews. Besides using the button to log in, when I click on the rate movie button, I am taken to the page to log in and I can see the heading that reflects what I am about to do. I can see the same when I click on the button to post a comment. 
+
+Changes: The rating feature is out for now, as outlined above. This will be part of a future iteration.
+
 6. A page to sign up as a user loads up when I click on the signup button, and on the signup page, I can see a form that gives me helpful feedback to help fill it out. The hint element gives me helpful feedback telling me the mistake I made to fill out a field, particularly the password field.
+
+The script for the signup page handles the user input validation and lets the user know where a mistake has been made. This is made evident in the BDD_TESTS.md markdown file, along with the screenshots for the form validation mesages showing up on each form field error the user makes. 
+
+User story 7 acceptance criteria and tasks
+![Movie Freeks signup page](./user-stories/signup_user_story.png)
+Completed user story
+![Completed signup page user story](./user-stories/movie_freeks_signup.png)
+
 7. I am able to navigate to the about page, where I can read an overview of how the website came to be, and its' purpose.
 8. A contact page shows up when I click on the contact link on either the navbar, or the footer. On the contact page there is a form that allows me to send a message to inquire about a particular topic. The form gives me feedback regarding any mistakes that I have made in filling out the fields, and also informs me whether the message has been sent successfully. In the case the message was not succesfully sent, I am able to see a feedback telling me what went wrong. 
 9. I can see a button to toggle a dark theme for better readability of the text on the main content page, the about page, the contact page, the login page and the signup page.

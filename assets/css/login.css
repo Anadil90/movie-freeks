@@ -85,3 +85,7 @@ form {
     margin: 10px;
 }
 
+#login-hint {
+    background-color: aliceblue;
+}
+
