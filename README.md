@@ -51,6 +51,9 @@ Completed user story
 
 5. I can see a button to log in, and when I click on it, I am able to log in using my credentials to the main page to search for movie reviews. Besides using the button to log in, when I click on the rate movie button, I am taken to the page to log in and I can see the heading that reflects what I am about to do. I can see the same when I click on the button to post a comment. 
 
+Login page criteria
+![Login page acceptance criteria](./user-stories/login_criteria.png)
+
 Changes: The rating feature is out for now, as outlined above. This will be part of a future iteration. The function to read the text content of the button and pass it to the login page seemed to be possible based on the level of interactivity that jaavscript provides. But it has been realized that even event delegation may not make it possible, or rather seems to complicate the matter. It is clearly evident that a sort of templating is required to pull it off, where the data from the DOM is transferred to the page template in some way. This puts the feature to take in the value from the button and appending it to the heading of the form a process that is out of the scope of this module, and is rather a trivial task for the backend module where involvement with templating and databases are at a large. For now, the heading will simply reflect the action the user is about to perform. The user will be able to post and delete thier comments when they log in. This is in for now.
 
 6. A page to sign up as a user loads up when I click on the signup button, and on the signup page, I can see a form that gives me helpful feedback to help fill it out. The hint element gives me helpful feedback telling me the mistake I made to fill out a field, particularly the password field.
@@ -64,6 +67,9 @@ Completed user story
 
 7. I am able to navigate to the about page, where I can read an overview of how the website came to be, and its' purpose.
 8. A contact page shows up when I click on the contact link on either the navbar, or the footer. On the contact page there is a form that allows me to send a message to inquire about a particular topic. The form gives me feedback regarding any mistakes that I have made in filling out the fields, and also informs me whether the message has been sent successfully. In the case the message was not succesfully sent, I am able to see a feedback telling me what went wrong. 
+
+![Contact page criteria](./user-stories/contact_criteria.png)
+
 9. I can see a button to toggle a dark theme for better readability of the text on the main content page, the about page, the contact page, the login page and the signup page.
 
 ## Changes in content/ User story 
