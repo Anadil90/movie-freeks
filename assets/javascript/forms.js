@@ -145,18 +145,16 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
             title: undefined,
             commentText: undefined
         }
-        
     }
 
+    console.log(userData)
     store.push(userData);//Push the userData object into the store array
     hint.text("Registration successful! You can now log in to your account.")//Let the user know of the registration sucess
     }
 
-    
     registerUser()//Register the user with the form data
     localStorage.setItem("users", JSON.stringify(store));//Set local storage for the store object
 })
-
 
 //login form submit event handler handles login procedure
 $("#login").submit(function(event) {
@@ -168,8 +166,9 @@ $("#login").submit(function(event) {
     let users = JSON.parse(localStorage.getItem("users")) || [];//load users from the local storage if they exist, otherwise declare empty array.
     const foundUser = users.find(found => found.username === user && found.password === password);//Get users from the localstorage and find matching user
 
-    //If user if found, redirect to the main-content page
+    //If user is found, redirect to the main-content page
     if(foundUser) {
+        localStorage.setItem("loggedInUser", JSON.stringify(foundUser))//Set the loggedInUser object to the local storage
         //Replicate the behaviour of a button click, and navigate back to the main-content page
         $(location).attr('href', '/main-content.html');  
     }

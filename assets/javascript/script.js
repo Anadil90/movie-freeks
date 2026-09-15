@@ -1,10 +1,15 @@
-$(".movie-info").hide();//Hide the movi-info element from view
+
+/*Load the user store object from the local storage*/
+const users = JSON.parse(localStorage.getItem("users")) || [];//Get the users object from the local storage
+const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+$(".movie-info").hide();//Hide the movie-info element from view
 $(".post-comment").hide()//Hide the display of the movie comments button
 $(".movie-comments").hide()//Hide the display of the movie comments section by default
 
 document.getElementById("user-search").addEventListener("submit", function(event) {
     let searchInput = event.target.searchInput.value;//get value from user input
-    let searchQuery = searchInput;
+    let searchQuery = searchInput; 
 
     const options = {
         method: 'GET',
@@ -16,16 +21,16 @@ document.getElementById("user-search").addEventListener("submit", function(event
 
     event.preventDefault()//Prevent the default behaviour of the form
     /*Fetch response from api and append the append the resulting data to elements*/
-    
     fetch(apiUrl, options)
     .then(res => res.json())
     .then(data =>  {
-        for(result of data.results) {//Loop through the api response and assign the data to variable result
-            console.log(data.results)
+        
+            console.log(users)
 
             //Filter out the api response data to return only the object correponding to the search query
              data.results.filter(//Filter the data response from the api directly and return the result that matches with search query 
                 movie => {
+    
                     let originalTitle = movie.original_title.toLowerCase();
                     const langIsEnglish = movie.original_language === "en";
                     const searchQueryLowerCased = searchQuery.toLowerCase();
@@ -93,10 +98,34 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         $("movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
 
                         
-                        $(".post-comment").show()//show post comment button with search results
-                        $(".movie-comments").show()//show the movie comments div
+                        $(".post-comment").show()//Show post comment button with search results
 
+                        /*Show the form to write and post the comment, provided that the user came to this page following the log in procedure*/
+                        console.log("users:", users)
+                        
+                        $(".movie-comments").show()//Show the movie comments div
 
+                        /*Get the movie comments div from the DOM and assign to variable*/
+                        const movieComments = $(".movie-comments");
+
+                        /*Create a section and append the comments loaded from the local storage to the section*/
+                        let commentsSection = $(document.createElement("section"));//Create the section element for the comments
+                        commentsSection.addClass("user-comments");//Add the classname to the section for styling
+
+                        /*Create elements to display the username and comment posted by the user*/
+                        let loggedUser = $(document.createElement("span"));//Create the span to display the logged in username
+                        loggedUser.addClass("comments-user");
+                        loggedUser.text(`${loggedInUser.username}`)//Get the username from the loggedInUser local storage object and append it to the span
+
+                        let commentText = $(document.createElement("p"));//Create the paragraph for the comment text 
+                        commentText.addClass("comment-text")
+                        commentText.text(`${loggedInUser.comments}`);//Append the comment from the user to the paragraph
+
+                        /*Append the elements to display the comments as children of the comments section*/
+                        commentsSection.append(loggedUser, commentText)
+
+                        /*Append the created comments section as a child of the movie comments div*/
+                        movieComments.append(commentsSection)
                     }
 
                     else {
@@ -104,7 +133,7 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         $(".movie-info").show()//show the .movie-info div with the search results
                     }
             });
-        }
+        
     })
     .catch(err => console.error(err));
 
