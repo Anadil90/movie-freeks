@@ -113,19 +113,17 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         commentsSection.addClass("user-comments");//Add the classname to the section for styling
 
                         /*Create elements to display the username and comment posted by the user*/
-                        let loggedUser = $(document.createElement("span"));//Create the span to display the logged in username
-                        loggedUser.addClass("comments-user");
-                        loggedUser.text(`${loggedInUser.username}`)//Get the username from the loggedInUser local storage object and append it to the span
-
                         let commentText = $(document.createElement("p"));//Create the paragraph for the comment text 
                         commentText.addClass("comment-text")
-                        commentText.text(`${loggedInUser.comments}`);//Append the comment from the user to the paragraph
+
+                        /*Join an <em> element with the logged in user and the comment to create a comment body*/
+                        commentText.append(`<em>${loggedInUser.username},</em> on 15/09/2026 said: <br> ${loggedInUser.comments}`);//Append the comment from the user to the end of the paragraph
 
                         /*Append the elements to display the comments as children of the comments section*/
-                        commentsSection.append(loggedUser, commentText)
+                        commentsSection.append(commentText);
 
                         /*Append the created comments section as a child of the movie comments div*/
-                        movieComments.append(commentsSection)
+                        movieComments.append(commentsSection);
                     }
 
                     else {
