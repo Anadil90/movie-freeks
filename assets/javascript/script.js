@@ -35,6 +35,14 @@ document.getElementById("user-search").addEventListener("submit", function(event
                     const langIsEnglish = movie.original_language === "en";
                     const searchQueryLowerCased = searchQuery.toLowerCase();
 
+                    const searchedMovie = {//Set values of object keys to returned movie search data for quick reference across the codebase
+                        searchedMovieTitle: undefined,
+                        searchedMovieYear: undefined,
+                        searchedMovieActors: undefined,
+                        searchedMovieDirector: undefined,
+                        searchedMoviePlot: undefined,
+                        searchedMoviePoster: undefined
+                    }
                     /*
                     Original_title from api response contains a : after the first part of the title. This makes the search 
                     query string to not match with the original_title property of the api response object. The character
@@ -55,9 +63,18 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         let moviePlot = $("#movie-plot");
                     
                         console.log(searchInput)
+                        
+                        //Set value of searchedMovieTitle in searchedMovie object
+                        searchedMovie.searchedMovieTitle = movie.original_title
+
                         //Create and append label, along with the data to the corresponding elements for movie info
-                        movieTitle.html(`<label class=movie-info-label>Movie: </label> ${movie.original_title}`);//Movie title
-                        movieYear.html(`<label class=movie-info-label>Year: </label> ${movie.release_date}`);//Movie release year
+                        movieTitle.html(`<label class=movie-info-label>Movie: </label> ${searchedMovie.searchedMovieTitle}`);//Movie title
+                        
+                        //Set value of searchedMovieYear in searchedMovie object
+                        searchedMovie.searchedMovieYear= movie.release_date
+
+                        //Create and append label, along with the data to the corresponding elements for movie release year
+                        movieYear.html(`<label class=movie-info-label>Year: </label> ${searchedMovie.searchedMovieYear}`);//Movie release year
 
                         /*TMDB api does not allow appending query parameters to the api query string with append_to_response. Therefore, a seperate api call
                         to the credits endpoint has to be made to retrieve movie credits*/ 
@@ -66,18 +83,21 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         .then(res => res.json())
                         .then(credits => {
                             /*Loop through and return movie cast. Break off loop at the fifth iteration to show the first 4 actors as main actors.*/
-                            for(i = 0; i < credits.cast.length; i++) {
+                            for(let i = 0; i < credits.cast.length; i ++) {
                                 console.log("actor", credits.cast[i].original_name, )
-                                let actors = credits.cast.slice(0, 4);
-                                    console.log(actors)
+                                let actors = credits.cast.slice(0, 4);//Slice the cast array to return the first 4 actors as main actors
 
+                                    //Set value of searchedMovieActors in searchedMovie object to returned actors from TMDB credits api for later reference
+                                    searchedMovie.searchedMovieActors = [actors[0].name, actors[1].name, actors[2].name, actors[3].name]//Set value of key to actors list
                                     //Show movie actors on the actors label element
                                     movieActors.html(`<label class=movie-info-label>Actors: </label> ${actors[0].name}, ${actors[1].name}, ${actors[2].name},
                                     ${actors[3].name}`);
 
+                                    //Set value of searchedMovieDirector in searchedMovie object to returned data from credits api for later reference
+                                    searchedMovie.searchedMovieDirector = credits.crew[1].name;
                                     //Show movie director on the director label element
                                     movieDirector.html(`<label class=movie-info-label>Director: </label> ${credits.crew[1].name}`);
-                                    console.log(credits)
+                                    console.log(credits.crew)
                                 if(i < 4) {
                                     continue
                                 }
@@ -87,13 +107,17 @@ document.getElementById("user-search").addEventListener("submit", function(event
                             }
                             
                         })
-                        
-                        
-                        moviePlot.html(`<label class=movie-info-label>Plot: </label> ${movie.overview}`); 
-                        //set img attribute to display movie poster
-                        const posterUrlBase = "https://image.tmdb.org/t/p/w500/";
-                        $(".movie-poster").attr("src", posterUrlBase + movie.poster_path);//set the poster image for the movie
 
+                        //Set value of searchedMoviePlot in searchedMovie object to returned movie plot from TMDB api for later reference
+                        searchedMovie.searchedMoviePlot = movie.overview;
+                        //Show movie plot
+                        moviePlot.html(`<label class=movie-info-label>Plot: </label> ${movie.overview}`); 
+                        //Set img attribute to display movie poster
+                        const posterUrlBase = "https://image.tmdb.org/t/p/w500/";
+                        const posterAttribute = `src, ${posterUrlBase + movie.poster_path}`;//set the src attribute to the poster url and the path from api
+                        $(".movie-poster").attr(posterAttribute);//set the poster image for the movie
+                        //Set searchedMoviePoster in searchedMovie object to movie poster url appended with the poster path from TMDB api
+                        searchedMovie.searchedMoviePoster = $(".movie-poster").attr(posterAttribute)
                         //show for which movie the poster is for
                         $("movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
 
@@ -116,8 +140,11 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         let commentText = $(document.createElement("p"));//Create the paragraph for the comment text 
                         commentText.addClass("comment-text")
 
+                        /*Return the date in mm.dd.yyyy format from the date object*/
+                        const presentDate = new Date()//Get the current date in milliseconds from the Javascript Date object
+                        const dateAsLocaleString = presentDate.toLocaleDateString();//Return the current date as a locale string from the elasped milliseconds
                         /*Join an <em> element with the logged in user and the comment to create a comment body*/
-                        commentText.append(`<em>${loggedInUser.username},</em> on 15/09/2026 said: <br> ${loggedInUser.comments}`);//Append the comment from the user to the end of the paragraph
+                        commentText.append(`<em>${loggedInUser.username},</em> on ${dateAsLocaleString} said: <br> ${loggedInUser.comments}`);//Append the comment from the user to the end of the paragraph
 
                         /*Append the elements to display the comments as children of the comments section*/
                         commentsSection.append(commentText);
