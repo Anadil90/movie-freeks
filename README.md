@@ -3,9 +3,13 @@ Movie Freeks is a movie review website that aims to present a straightforward an
 
 ## Features 
 - Users can search for movies and see the corresponding details of the movie, as well the rating for it, presented in a manner that is clear and easy to understand.  
-- A rating system that makes use of effective iconography to let the user know in a flash whether a movie is good or not. The rating system is made to convey to the user a simple "good" or "bad" with the combination of text and icons. Users can log in and rate movies by allocating popcorn icons, the maximum of which is 5, and the minimum of which is 1.
+- A rating system that makes use of effective text and colors to let the user know in a flash whether a movie is good or not. The rating system functions as follows:
+
+Users are able to rate a movie from an option of three categories which are "Watch", "Must watch", and "Skip". A single span shows the rating for the movie that is determined by the number of users who gave the particular rating. For example, if 60 users rated a movie "Must watch", and 40 users rated it "Watch", and 10 as "Skip", the rating span will display "Must watch" and the span will be colored green. This means the rating system is a simple text based confirmation for the users of the website, that takes in the rating category with the highest number and assigns that as the rating for the movie.
+
+A color scheme is used to convey the rating category of the movie. For this, a the rating text is shown inside of a span that coresponds to the type of feeling the category invokes. Red is used to convey the "Skip" category, which are the movies thought to be not so good in terms of watching. Blue is used to convey the "Watch" category, which is thought to be worthy of watching. Green is used to convey the "Must watch" category, which is thought to be movies that are really good and must be watched. This makes it simple and uncomplicated for the user.
 - A pleasing interface that makes use of bold colors and text that best makes an impact upon the user.
-- The ability for the users to leave comments on a particular movie review to add their perspective of the movie direction, plot, acting, or other elements.
+- The ability for the users to leave comments on a particular movie review to add their perspective of the movie direction, plot, acting, or other elements. The users can also delete and edit their comments.
 
 ## Project rationale
 The Movie Freeks project has been developed with the aim of offering an interactive movie review website to the users, that helps them to find out quickly and efficiently movies to watch. At its' base, the website is designed to be useful, useable, and provide value to the users, in terms of being quickly being able to find movies to watch without frustrations in the user experience process. In such a website, a lot of information can be provided to the user and be thought of as being useful to the user. But Movie Freeks focuses on keeping information to a minimum point, where will be utilizing the information to make a decision quickly without the need to cross-reference other sources. This is the main goal of the website. As Movie Freeks aims to serve movie enthusiasts as the users of the website, the landing page design has been concieved to be more related to what the word "movies" portay in the minds of individuals in general. This is evident with the call-to-action text and the background of the landing page. Movie Freeks has been developed with the intention of serving users in a production-level environment in the future, with an active development cycle that will on its' many iterations, offer new features and user experience improvements.
@@ -207,7 +211,7 @@ Movie Freeks landing page wireframe
 ![Movie Freeks landing page](./wireframes/movie-freeks-landing.png)
 
 Movie search results page: 
-The website search results page has the input element with the search button for searching the movie, and the section with the movie search results apended to it dynamically. Below it is the comments section where users voice in their opinions about the movie. A rating system is also present here where users leave thier ratings. The ratings in terms of popcorn icons can be seen on the search results div.
+The website search results page has the input element with the search button for searching the movie, and the section with the movie search results apended to it dynamically. Below it is the comments section where users voice in their opinions about the movie. A rating system is also present here where users leave thier ratings. The rating span for the movie according to the rating category of "Watch", "Must watch" and "Skip" is visible on the movie search result element that signals to the user whether the movie should be watched or not. 
 
 Movie Freeks search results wireframe
 ![Movie Freeks search results](./wireframes/search-results-wireframe.png)
