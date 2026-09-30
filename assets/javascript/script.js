@@ -61,8 +61,6 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         let movieActors = $(".movie-actors");
                         let movieDirector = $(".movie-director");
                         let moviePlot = $("#movie-plot");
-                    
-                        console.log(searchInput)
                         
                         //Set value of searchedMovieTitle in searchedMovie object
                         searchedMovie.searchedMovieTitle = movie.original_title
@@ -114,12 +112,12 @@ document.getElementById("user-search").addEventListener("submit", function(event
                         moviePlot.html(`<label class=movie-info-label>Plot: </label> ${movie.overview}`); 
                         //Set img attribute to display movie poster
                         const posterUrlBase = "https://image.tmdb.org/t/p/w500/";
-                        const posterAttribute = `src, ${posterUrlBase + movie.poster_path}`;//set the src attribute to the poster url and the path from api
-                        $(".movie-poster").attr(posterAttribute);//set the poster image for the movie
+                        const posterAttribute = `${posterUrlBase + movie.poster_path}`;//set the src attribute to the poster url and the path from api
+                        $(".movie-poster").attr("src", posterAttribute);//set the poster image for the movie
                         //Set searchedMoviePoster in searchedMovie object to movie poster url appended with the poster path from TMDB api
                         searchedMovie.searchedMoviePoster = $(".movie-poster").attr(posterAttribute)
-                        //show for which movie the poster is for
-                        $("movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
+                        //Set the alt text for the movie for accessibility and when image doesn't load
+                        $(".movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
 
                         
                         $(".post-comment").show()//Show post comment button with search results
