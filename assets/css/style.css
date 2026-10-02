@@ -74,7 +74,7 @@ footer {
     border-radius: 0;/*remove default border radius for a uniform look with the search button*/
 }
 
-#search-text {
+#search-text{
     width: 20em;
     border: none;
 }
@@ -136,13 +136,12 @@ footer {
 
 /* media queries for the main-content page */ 
 @media screen and (min-width:320px) and (max-width:767px) {
-    #search-elements-container {
+    #movie-search > .form-elements-container {
         flex-direction: column;
-        align-items: center;
     }
 
     #search-text {
-        width: 17rem;
+        width: 17em
     }
 
     .navbar-toggler {

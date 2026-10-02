@@ -7,7 +7,7 @@ $(".movie-info").hide();//Hide the movie-info element from view
 $(".post-comment").hide()//Hide the display of the movie comments button
 $(".movie-comments").hide()//Hide the display of the movie comments section by default
 
-document.getElementById("user-search").addEventListener("submit", function(event) {
+document.getElementById("movie-search").addEventListener("submit", function(event) {
     let searchInput = event.target.searchInput.value;//get value from user input
     let searchQuery = searchInput; 
 
