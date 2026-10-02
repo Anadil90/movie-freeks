@@ -215,8 +215,16 @@ Movie Freeks landing page wireframe
 Movie search results page: 
 The website search results page has the input element with the search button for searching the movie, and the section with the movie search results apended to it dynamically. Below it is the comments section where users voice in their opinions about the movie. A rating system is also present here where users leave thier ratings. The rating span for the movie according to the rating category of "Watch", "Must watch" and "Skip" is visible on the movie search result element that signals to the user whether the movie should be watched or not. 
 
+Changes in the movie search results page content: 
+The movie search results page content have undergone two notable changes that impacts the layout of the page. The rating element first of all, is now a span with a text that simply tells the user whether the movie is worthwhile watching or not, as outlined in the features section of this readme document. The user comments is no longer deemed as a neccessary feature and has been removed due to it being counteractive to implement with local storage, as also outlined in the features section of the readme. The new wireframe that reflects both of these changes is shown directly below the original wireframe drawn by hand.
+
 Movie Freeks search results wireframe
 ![Movie Freeks search results](./wireframes/search-results-wireframe.png)
+
+Movie Freeks new search results wireframe
+![Movie Freeks search results ammended](./wireframes/new_search_result_wireframe.png)
+
+The ammended wireframes were done with mockflow, which is a very neat and easy to use wireframing tool. The link to the wireframing tool can be found here by the following link: (Mockflow )[https://mockflow.com/]
 
 Login page: 
 The login page presents the user with a simple login form with a background image of a movie theatre to keep the user focused on the purpose of the website. The user is dynamically informed of the action being performed upon login. For example, if they cick on the post comment button, they will be taken to the login page where the heading will read "login to post a comment" when the user logs in to post a comment, and "login to rate a movie" when the user logs in to rate a movie.
