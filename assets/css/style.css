@@ -161,12 +161,12 @@ footer {
     }
 
     .search-movie {
-        font-size: 12px;
+        font-size: 16px;
         margin-top: 10px;
     }
 
     .search-heading {
-        font-size: small;
+        font-size: medium;
     }
 
     .navbar-brand {
