@@ -224,10 +224,13 @@ Movie Freeks search results wireframe
 Movie Freeks new search results wireframe desktop
 ![Movie Freeks search results ammended](./wireframes/new_search_result_wireframe.png)
 
+Movie Freeks search results wireframe Tablet
+![Movie Freeks search results tablet wireframe](./wireframes/search_result_tablet_wireframe.png)
+
 Movie Freeks search results wireframe mobile
 ![Movie Freeks search results mobile wireframe](./wireframes/search_results_wireframe_mobile.png)
 
-The ammended and the new wireframes were done with mockflow, which is a very neat and easy to use wireframing tool. The link to the wireframing tool can be found here by the following link: (Mockflow )[https://mockflow.com/]
+The new wireframes were done with mockflow, which is a very neat and easy to use wireframing tool. The link to the wireframing tool can be found here by the following link: (Mockflow )[https://mockflow.com/]
 
 Login page: 
 The login page presents the user with a simple login form with a background image of a movie theatre to keep the user focused on the purpose of the website. The user is dynamically informed of the action being performed upon login. For example, if they cick on the post comment button, they will be taken to the login page where the heading will read "login to post a comment" when the user logs in to post a comment, and "login to rate a movie" when the user logs in to rate a movie.
