@@ -1,6 +1,12 @@
 let store = []//Store the data of each user registration as an object that is an item in the array
-
 const hint = $("#hint");//Select the hint element in the DOM
+const searchedMovieTitle = JSON.parse(localStorage.getItem("movieTitle"));//Import the object containing the searched movie title
+
+//Add movie title to end of login form heading to show which movie user will be rating
+console.log(searchedMovieTitle)
+const loginFormHeading = $(".login-form-heading");//Get form heading
+loginFormHeading.append(searchedMovieTitle.title);//Append movie title to form heading
+
 
 $("#signup").submit(function(event) {//Attach a submit event to the signup form to listen for the submit event
     event.preventDefault()//Prevent the default behaviour of the form
@@ -146,8 +152,7 @@ $("#signup").submit(function(event) {//Attach a submit event to the signup form 
             commentText: undefined
         }
     }
-
-    console.log(userData)
+    
     store.push(userData);//Push the userData object into the store array
     hint.text("Registration successful! You can now log in to your account.")//Let the user know of the registration sucess
     }
@@ -172,7 +177,7 @@ $("#login").submit(function(event) {
         //Replicate the behaviour of a button click, and navigate back to the main-content page
         $(location).attr('href', '/main-content.html');  
     }
-    else {//If no user details don't match, prompt the user of the login credentials being incorrect
+    else {//If user details don't match, prompt the user of the login credentials being incorrect
         $("#login-hint").text("Your username or password is not correct.")
     }
     

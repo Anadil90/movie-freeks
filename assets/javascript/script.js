@@ -50,8 +50,10 @@ document.getElementById("movie-search").addEventListener("submit", function(even
                         let movieDirector = $(".movie-director");
                         let moviePlot = $("#movie-plot");
                         
-                        //Set searchedMovieTitle as key and movie.original_title as value to loggedInUser local storage object
-                        loggedInUser.searchedMovieTitle = movie.original_title;//Value is used to display movie name in login form heading
+                        //Set movie title to searchedMovieTitle local storage object
+                        let searchedMovieTitle = {title: movie.original_title};
+                        localStorage.setItem("movieTitle", JSON.stringify(searchedMovieTitle))
+                        
                         //Create and append label, along with the data to the corresponding elements for movie info
                         movieTitle.html(`<label class=movie-info-label>Movie: </label> ${movie.original_title}`);//Movie title
 
