@@ -230,13 +230,33 @@ Movie Freeks search results wireframe Tablet
 Movie Freeks search results wireframe mobile
 ![Movie Freeks search results mobile wireframe](./wireframes/search_results_wireframe_mobile.png)
 
-The new wireframes were done with mockflow, which is a very neat and easy to use wireframing tool. The link to the wireframing tool can be found here by the following link: (Mockflow )[https://mockflow.com/]
+The new wireframes were done with mockflow, which is a very neat and easy to use wireframing tool. The link to the wireframing tool can be found here by the following link: (Mockflow)[https://mockflow.com/]
 
 Login page: 
-The login page presents the user with a simple login form with a background image of a movie theatre to keep the user focused on the purpose of the website. The user is dynamically informed of the action being performed upon login. For example, if they cick on the post comment button, they will be taken to the login page where the heading will read "login to post a comment" when the user logs in to post a comment, and "login to rate a movie" when the user logs in to rate a movie.
+The login page presents the user with a simple login form with a background image of a movie theatre to keep the user focused on the purpose of the website. The user is dynamically informed of the action being performed upon login. For example, if they cick on the post comment button, they will be taken to the login page where the heading will read "login to post a comment" when the user logs in to post a comment, and "login to rate a movie" when the user logs in to rate a movie. For now, only the rating function has been implemented, and the comment function has been staged for a future release along with the backend implementation, as outlined in the features section of the readme. Therefore, the only action being performed is the movie name being fetched from the loggedInUser local storage object, and the value being appended to the login form heading. As an example, the login form heading should read "Login to rate the movie Tron: Legacy". The new wireframes reflect this change. The wireframes also show the page view with the hint element being trigerred, and without it. When the user attempts to submit an empty form, the hint element pops up directly above the form to warn the user. The screenshots for the individual form field validations for the login form can be found in the markdown for the BDD Tests here: (BDD Tests)[./manual_testing/BDD_TESTS.md]
 
 Movie Freeks login page wireframe
 ![Movie Freeks login wireframe](./wireframes/login-wireframe.png)
+
+The new wireframes done with mockflow are shown below for mobile, tablet and desktop screen sizes:
+
+Movie Freeks login page wireframe desktop no hint
+![Movie Freeks login wireframe desktop without hint](./wireframes/login_wireframe_nohint_desktop.png)
+
+Movie Freeks login page wireframe desktop with hint
+![Movie Freeks login wireframe desktop with hint](./wireframes/login_wireframe_hint_desktop.png)
+
+Movie Freeks login page wireframe tablet no hint
+![Movie Freeks login wireframe tablet without hint](./wireframes/login_wireframe_nohint_tablet.png)
+
+Movie Freeks login page wireframe tablet with hint
+![Movie Freeks login wireframe tablet with hint](./wireframes/login_wireframe_hint_tablet.png)
+
+Movie Freeks login page wireframe mobile no hint
+![Movie Freeks login wireframe mobile without hint](./wireframes/login_wireframe_nohint_mobile.png)
+
+Movie Freeks login page wireframe mobile with hint
+![Movie Freeks login wireframe mobile with hint](./wireframes/login_wireframe_hint_mobile.png)
 
 Signup page:
 The signup page consists of a background image of a form being filled out to keep the relevance of the page clear, and draw a relation between the user action being performed, that is, filling out a form to register for a service. This has been done as an attempt to improve the user experience, by leading the user from the main content page to the login page, and keeping the user focused on the user action to be performed, without distracting the user.
@@ -245,6 +265,19 @@ The signup form consists of input element with placeholder text of semantic mean
 
 The signup form also contains a hint element, that helps the user to fill out a field when incorrect text input has been given. This is particularly for the password field, as it is validated with a combination of numbers, letters, and special characters for security. The useful information on what the user has to do in order to fill out a particular field is given on the hint element on top of the form. 
 
+Contact page:
+The contact page of Movie Freeks contains a simple form to allow the user to send a message to the site owner. The form input is validated before allowing the user to submit the message. 
+
+Movie Freeks contact page desktop wireframe:
+![Movie Freeks contact wireframe desktop](./wireframes/contact_wireframe_desktop.png)
+
+Movie Freeks contact page tablet wireframe: 
+![Movie Freeks tablet device wireframe](./wireframes/contact_wireframe_tablet.png)
+
+Movie Freeks contact page mobile wireframe:
+![Movie Freeks contact wireframe mobile](./wireframes/contact_wireframe_mobile.png)
+
+
 Movie Freeks signup page wireframe
 ![Movie Freeks signup wireframe](./wireframes/signup-wireframe.png)
 
@@ -252,7 +285,7 @@ Movie Freeks signup page wireframe
 - Simple, informative, and non complex interface that gives the user exactly what the user asks for.
 - One single page for the user content, that is the search result of the movie.
 - User can search for movies straight away when they click on the button on the landing page, without needing to sign in.
-- User only signs in to post a review of a movie, or rate a certain movie, or comment on it. No unnecessary actions will be carried out by the user.
+- User only signs in to rate a movie (This feature is in for now and user comments to be implemented in a future release). No unnecessary actions will be carried out by the user.
 - The user is given sensible feedback regarding their actions, when it comes to interacting with forms and the search results.
 - Effective warnings are given to the users to let them know of an error that occurred. 
 - Users are redirected to an error page where the error is explained in plain understandable terms, and then given the option to go back to the search page without using the browser back button.

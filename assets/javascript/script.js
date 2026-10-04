@@ -50,13 +50,15 @@ document.getElementById("movie-search").addEventListener("submit", function(even
                         let movieDirector = $(".movie-director");
                         let moviePlot = $("#movie-plot");
                         
+                        //Set searchedMovieTitle as key and movie.original_title as value to loggedInUser local storage object
+                        loggedInUser.searchedMovieTitle = movie.original_title;//Value is used to display movie name in login form heading
                         //Create and append label, along with the data to the corresponding elements for movie info
                         movieTitle.html(`<label class=movie-info-label>Movie: </label> ${movie.original_title}`);//Movie title
 
                         //Create and append label, along with the data to the corresponding elements for movie release year
                         movieYear.html(`<label class=movie-info-label>Year: </label> ${movie.release_date}`);//Movie release year
                         
-                        /*TMDB api does not allow appending query parameters to the api query string with append_to_response. Therefore, a seperate api call
+                        /*TMDB api does not allow appending query parameters to the api query string with append_to_response. Therefore, a separate api call
                         to the credits endpoint has to be made to retrieve movie credits*/ 
                         //Fetch movie credits from the TMDB credits endpoint
                         fetch(`https://api.themoviedb.org/3/movie/${movie.id}/credits`, options)
