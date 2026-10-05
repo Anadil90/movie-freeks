@@ -93,6 +93,22 @@ footer {
     margin-left: 5px;
 }
 
+#contact-form > .contact-name-div, .contact-email-div, .contact-message-div {
+    width: 100%;
+}
+
+#contact-form {
+    margin: auto;
+    width: 70%;
+}
+
+.submit-contact {
+    margin-top: 10px;
+}
+
+#contact-form-heading {
+    text-align: center;
+}
 
 p {
     margin-top: 40px;
