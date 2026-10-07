@@ -4,8 +4,7 @@ const users = JSON.parse(localStorage.getItem("users")) || [];//Get the users ob
 const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
 
 $(".movie-info").hide();//Hide the movie-info element from view
-$(".post-comment").hide()//Hide the display of the movie comments button
-$(".movie-comments").hide()//Hide the display of the movie comments section by default
+$("#movie-rating").hide()//Hide the display of the rate movie button by default
 
 document.getElementById("movie-search").addEventListener("submit", function(event) {
     let searchInput = event.target.searchInput.value;//get value from user input
@@ -96,7 +95,10 @@ document.getElementById("movie-search").addEventListener("submit", function(even
                         $(".movie-poster").attr("src", posterAttribute);//set the poster image for the movie
                         //Set the alt text for the movie for accessibility and when image doesn't load
                         $(".movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
-                        
+
+                        if(movie) {
+                            $("#movie-rating").show()//Show the rate movie button
+                        }
                     }
 
                     else {
