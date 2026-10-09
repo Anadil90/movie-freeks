@@ -123,19 +123,22 @@ footer {
     background-color: #a8dfdc;/*creates a very subtle background color contrast with the body background*/ 
 }
 
-.movie-comments {
-    display: flex;
-    justify-content: end;
-    margin-top: 10px;
-}
-
-.post-comment {
-    justify-content: end;
-    margin-left: 15px;
+.submit-rating {
+    margin-top: 15px;
 }
 
 #movie-rating {
     margin-top: 15px;
+}
+
+.movie-rate-options {
+    display: flex;
+    margin-top: 10px;
+}
+
+.rate-movie {
+    width: fit-content;
+    margin-left: 10px;
 }
 
 /* media queries for the main-content page */ 

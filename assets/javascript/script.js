@@ -1,8 +1,4 @@
 
-/*Load the user store object from the local storage*/
-const users = JSON.parse(localStorage.getItem("users")) || [];//Get the users object from the local storage
-const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-
 $(".movie-info").hide();//Hide the movie-info element from view
 $("#movie-rating").hide()//Hide the display of the rate movie button by default
 
@@ -95,16 +91,14 @@ document.getElementById("movie-search").addEventListener("submit", function(even
                         $(".movie-poster").attr("src", posterAttribute);//set the poster image for the movie
                         //Set the alt text for the movie for accessibility and when image doesn't load
                         $(".movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
-
-                        if(movie) {
-                            $("#movie-rating").show()//Show the rate movie button
-                        }
-                    }
+                        $(".movie-info").show()//show the .movie-info div with the search results
+                    } 
 
                     else {
                         $("movie-info").text("The movie you searched for was not found. Please make sure that the movie title has been typed properly.")
                         $(".movie-info").show()//show the .movie-info div with the search results
                     }
+
             });
         
     })

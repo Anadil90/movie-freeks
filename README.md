@@ -6,9 +6,8 @@ Movie Freeks is a movie review website that aims to present a straightforward an
 - A pleasing interface that makes use of bold colors and text that best makes an impact upon the user.
 - The user is given effective feedback when the incorrect movie title has been entered, or the movie is unable to be found.
 - Useful feedback text for forms that tells the user exactly what went wrong.
-- A rudimentary sign up feature is in place for now that allows the user to sign up to the website and incorporates helpful feedback. The user created with the sign up form are held in local storage.
-- A log in feature that validates the user information and takes them to the main page.
 - A dark mode that can be toggled to let the user skim through movie information at the bedside without eye strain.
+- Users are redirected to an error page where the error is explained in plain understandable terms, and then given the option to go back to the search page without using the browser back button.
 
 Changes in features:
 A log in and sign up system was designed that makes use of local storage as a means of holding the user information. While for the interactive purpose the log in and the sign up feature implemented with local storage works fine just as intended, the comment feature did work up till a certian point, but that became quickly overburdened with unneccessary complexity. For that reason, the comment feature was removed from the project, as setting and getting data from the local storage proved to be quite messy. The feature furthermore required the searched movie information to be shown once again above the comments by fetching them from the local storage. This feature was thought to enhance the user interactivity considerably, but instead it became an hindrance in terms of offering the user the very basic core feature, which is to search and find movie information quickly. With this goal in mind, the user is to read through the movie information and decide whether it is good or not. So therefore implementing a rating system here also does not fall into the main goal of the website, and also would require a database to effectively retain the information, in addition to effective templating on the server side. The same would apply to users commenting on movies, as they are purely CRUD operations. Implementing these features with local storage is counteractive, as the previous few commit histories prove, even though some progress was made. It is evident that the log in, sign up, rating, and comments features are best reserved for future iterations of the website, where they will fully come into play with the backend and server side templating implementation. As of such, only the log in and sign up features will use local storage to allow the user to sign up and login to the website. The rating and the comment features have been removed, and rather, the dark mode feature is to be implemented as a utility for strain-free reading for the user. For now, the sign up form will give feeedback to the user for each mistake on the form field they make, and also let the user know of the signup process being a success only when all the fields have been correctly filled out. The log in function will check whether the user exists in the local storage object and if found, it will take the user to the main page, where they can search for a movie.This is in for now.  
@@ -170,38 +169,26 @@ User story 3 acceptance criteria and tasks
 ![Movie Freeks movie search results](./user-stories/movie_search_user_story.png)
 Completed user story
 ![Completed movie search results user story](./user-stories/movie_search_results_completed.png)
-4. When the search results for the movie being searched for loads, I can also see the corresponding rating for the movie that helps to make a clearer decision in terms of whether to watch it, or not - This user story is a could have, which has been targeted to be released in a future iteration that will also aom to improve the website layout and design.
 
-5. I can see a button to log in, and when I click on it, I am able to log in using my credentials to the main page to search for movie reviews. Besides using the button to log in, when I click on the rate movie button, I am taken to the page to log in and I can see the heading that reflects what I am about to do. I can see the same when I click on the button to post a comment. 
-
+Note: The user comments feature is no longer in the present scope of the project, owing to the complexity of pulling off an element of interaction that is far more simpler to do with a backend in place. It is to be done in a future release of the website's iteration. As a result of such, the comment button has been removed from the movie search results page, which is evident in the screenshot for the completed movie search results user story above.
 Login page criteria
-![Login page acceptance criteria](./user-stories/login_criteria.png)
 
-Changes: The rating feature is out for now, as outlined above. This will be part of a future iteration. The function to read the text content of the button and pass it to the login page seemed to be possible based on the level of interactivity that jaavscript provides. But it has been realized that even event delegation may not make it possible, or rather seems to complicate the matter. It is clearly evident that a sort of templating is required to pull it off, where the data from the DOM is transferred to the page template in some way. This puts the feature to take in the value from the button and appending it to the heading of the form a process that is out of the scope of this module, and is rather a trivial task for the backend module where involvement with templating and databases are at a large. For now, the heading will simply reflect the action the user is about to perform. The user will be able to post and delete thier comments when they log in. This is in for now.
-
-6. A page to sign up as a user loads up when I click on the signup button, and on the signup page, I can see a form that gives me helpful feedback to help fill it out. The hint element gives me helpful feedback telling me the mistake I made to fill out a field, particularly the password field.
-
-The script for the signup page handles the user input validation and lets the user know where a mistake has been made. This is made evident in the [BDD TESTS](./manual_testing/BDD_TESTS.md) markdown file, along with the screenshots for the form validation mesages showing up on each form field error the user makes. 
-
-User story 6 acceptance criteria and tasks
-![Movie Freeks signup page](./user-stories/signup_criteria.png)
-Completed user story
-![Completed signup page user story](./user-stories/movie_freeks_signup.png)
-
-7. I am able to navigate to the about page, where I can read an overview of how the website came to be, and its' purpose.
-8. A contact page shows up when I click on the contact link on either the navbar, or the footer. On the contact page there is a form that allows me to send a message to inquire about a particular topic. The form gives me feedback regarding any mistakes that I have made in filling out the fields, and also informs me whether the message has been sent successfully. In the case the message was not succesfully sent, I am able to see a feedback telling me what went wrong. 
+4. I am able to navigate to the about page, where I can read an overview of how the website came to be, and its' purpose.
+5. A contact page shows up when I click on the contact link on either the navbar, or the footer. On the contact page there is a form that allows me to send a message to inquire about a particular topic. The form gives me feedback regarding any mistakes that I have made in filling out the fields, and also informs me whether the message has been sent successfully. In the case the message was not succesfully sent, I am able to see a feedback telling me what went wrong. 
 
 ![Contact page criteria](./user-stories/contact_criteria.png)
 
-9. I can see a button to toggle a dark theme for better readability of the text on the main content page, the about page, the contact page, the login page and the signup page.
+6. I can see a button to toggle a dark theme for better readability of the text on the main content page, the about page, the contact page, the login page and the signup page.
 
 ## Changes in content/ User story 
 - A shuffling sidebar  with movie reviews of 3 Pocorn icons and more to be displayed alongside the movie search results was scrapped as a feature and user story of the project, This feature did not make sense to implement, as the main aim of the website is for the user to search for a particular movie and see its review, to be able to find movies to watch by reading reviews. The feature kind of contradicts the purpose. 
 
 - The randomly falling icons on the landing page has been removed as part of the landing page design owing to the fact that it seems to take the focus away from the call-to-action text. Furthermore, it has been gauged that such a design does not actually provide content hinting in terms of what can be expected by a call-to-action, but rather take away the attention somhwere else. The goal is to get the user to focus on the offering, get an imprint of what is to be expected, and then directly visit the product offering (the website content) as a result of being enticed by what is being offered. The landing page design now consists of a background image of a dark movie theatre with red seats, with the heading having a color of alice blue, that perfectly contrasts the dark background. It also seems more visually inclined towards the user, as the main thing here is the description of the site offering, which must be in clear focus. Another thing that was not thought of before is the branding. The navabar brand icon of Movie Freeks is supposed to be a movie reel. Though seemingly trivial, adding the icon to the heading of the landing page may indeed work better towards connecting the user to the offering of Movie Freeks. A font awesome icon of fa-film has been added to the heading element for that exact reason.
 
+- The login, signup user comments and rating features have been removed from the project. A few attempts were made to pull of the features by using local storage as a way to hold the data, but that ultimately started to complicate the matter. The primary issue that lied with using local storage as a means of keeping data was that it kind of only emulated a method of having a database. Meaning it is not the same thing as having a database. Although local storage helped to pass on information dynamically to the pages by retaining the data even after a page referesh, and made it possible to implement the features to a certain extent, at the end of the day it defeated the purpose of having an interactive frontend. This was owed to the complexity of retrieving values from the local storage object in specific cases, for example, showing search results to the user after being redirected to the main-content page. The issues of implementing the sign up and login functionality along with the user comments  and the rating function lead to user confusion, as some information could not be shown to the user and some actions could not be performed. Owing to this, it has been thought that these fatures are not a good fit for the user experience at this point of the development, as the main goal is to give the user movie information quickly that is easy to read. 
+
 ## Project Wireframes
-The wireframing of the project was done on a Lenovo P12 tablet with pen input. The rough drawings helped to capture visually the appearance of the website close to its' final iteration.
+The project wireframes serve as a drawing board for the conception of the UX elements. It helped to draw a picture of how the website can end up looking utlimately for the user. 
 
 Landing page:
 Original idea - The landing page of Movie Freeks is poised to be a simple page with a convincing call-to-action text, and 5 randomly generated icons that fall out from a random position on the viewport. The icons are camera reel, popcorn bucket, movie ticket, and a drink bottle with straw. These icons aim to give a more vivid meaning to the purpose of the website. 
@@ -213,10 +200,7 @@ Movie Freeks landing page wireframe
 ![Movie Freeks landing page](./wireframes/movie-freeks-landing.png)
 
 Movie search results page: 
-The website search results page has the input element with the search button for searching the movie, and the section with the movie search results apended to it dynamically. Below it is the comments section where users voice in their opinions about the movie. A rating system is also present here where users leave thier ratings. The rating span for the movie according to the rating category of "Watch", "Must watch" and "Skip" is visible on the movie search result element that signals to the user whether the movie should be watched or not. 
-
-Changes in the movie search results page content: 
-The movie search results page content have undergone two notable changes that impacts the layout of the page. The rating element first of all, is now a span with a text that simply tells the user whether the movie is worthwhile watching or not, as outlined in the features section of this readme document. The user comments is no longer deemed as a neccessary feature and has been removed due to it being counteractive to implement with local storage, as also outlined in the features section of the readme. The new wireframe that reflects both of these changes is shown directly below the original wireframe drawn by hand.
+The website search results page has the input element with the search button for searching the movie, and the section with the movie search results apended to it dynamically. 
 
 Movie Freeks search results wireframe
 ![Movie Freeks search results](./wireframes/search-results-wireframe.png)
@@ -231,43 +215,6 @@ Movie Freeks search results wireframe mobile
 ![Movie Freeks search results mobile wireframe](./wireframes/search_results_wireframe_mobile.png)
 
 The new wireframes were done with mockflow, which is a very neat and easy to use wireframing tool. The link to the wireframing tool can be found here by the following link: (Mockflow)[https://mockflow.com/]
-
-Login page: 
-The login page presents the user with a simple login form with a background image of a movie theatre to keep the user focused on the purpose of the website. The user is dynamically informed of the action being performed upon login. For example, if they cick on the post comment button, they will be taken to the login page where the heading will read "login to post a comment" when the user logs in to post a comment, and "login to rate a movie" when the user logs in to rate a movie. For now, only the rating function has been implemented, and the comment function has been staged for a future release along with the backend implementation, as outlined in the features section of the readme. Therefore, the only action being performed is the movie name being fetched from the loggedInUser local storage object, and the value being appended to the login form heading. As an example, the login form heading should read "Login to rate the movie Tron: Legacy". The new wireframes reflect this change. The wireframes also show the page view with the hint element being trigerred, and without it. When the user attempts to submit an empty form, the hint element pops up directly above the form to warn the user. The screenshots for the individual form field validations for the login form can be found in the markdown for the BDD Tests here: [Movie Freeks BDD Tests](./manual_testing/BDD_TESTS.md)
-
-Movie Freeks login page wireframe
-![Movie Freeks login wireframe](./wireframes/login-wireframe.png)
-
-The new wireframes done with mockflow are shown below for mobile, tablet and desktop screen sizes:
-
-Movie Freeks login page wireframe desktop no hint
-![Movie Freeks login wireframe desktop without hint](./wireframes/login_wireframe_nohint_desktop.png)
-
-Movie Freeks login page wireframe desktop with hint
-![Movie Freeks login wireframe desktop with hint](./wireframes/login_wireframe_hint_desktop.png)
-
-Movie Freeks login page wireframe tablet no hint
-![Movie Freeks login wireframe tablet without hint](./wireframes/login_wireframe_nohint_tablet.png)
-
-Movie Freeks login page wireframe tablet with hint
-![Movie Freeks login wireframe tablet with hint](./wireframes/login_wireframe_hint_tablet.png)
-
-Movie Freeks login page wireframe mobile no hint
-![Movie Freeks login wireframe mobile without hint](./wireframes/login_wireframe_nohint_mobile.png)
-
-Movie Freeks login page wireframe mobile with hint
-![Movie Freeks login wireframe mobile with hint](./wireframes/login_wireframe_hint_mobile.png)
-
-Signup page:
-The signup page consists of a background image of a form being filled out to keep the relevance of the page clear, and draw a relation between the user action being performed, that is, filling out a form to register for a service. This has been done as an attempt to improve the user experience, by leading the user from the main content page to the login page, and keeping the user focused on the user action to be performed, without distracting the user.
-
-The signup form consists of input element with placeholder text of semantic meaning to make it easier for the user to fill out the field quickly without thinking what should be done. Intelligble user feedback is given to the user in case the field is empty, or not completed properly, or is too short in terms of characters. A first name for example, should be a minimum of 2 characters. Normally a first name can be thought to be longer in terms of letters, but it has been considered that some names of Chinese origin may consist of only two letters, for example; Bo. If a minimum of three characters is to be assigned as the minimum length, then some people with 2 letter first names would not be able to register with their first name, leading to major frustration with the user experience. 
-
-The signup form also contains a hint element, that helps the user to fill out a field when incorrect text input has been given. This is particularly for the password field, as it is validated with a combination of numbers, letters, and special characters for security. The useful information on what the user has to do in order to fill out a particular field is given on the hint element on top of the form. 
-
-The validation for the signup form fields is outlined in the markdown file [BDD Tests for forms](./manual_testing/BDD_TESTS.md)
-
-
 
 Contact page:
 The contact page of Movie Freeks contains a simple form to allow the user to send a message to the site owner. The form input is validated before allowing the user to submit the message. 
@@ -288,8 +235,7 @@ Movie Freeks signup page wireframe
 ## User Experience Design methodology:
 - Simple, informative, and non complex interface that gives the user exactly what the user asks for.
 - One single page for the user content, that is the search result of the movie.
-- User can search for movies straight away when they click on the button on the landing page, without needing to sign in.
-- User only signs in to rate a movie (This feature is in for now and user comments to be implemented in a future release). No unnecessary actions will be carried out by the user.
+- User can search for movies straight away when they click on the call-to-action button that leads them to the main content page.
 - The user is given sensible feedback regarding their actions, when it comes to interacting with forms and the search results.
 - Effective warnings are given to the users to let them know of an error that occurred. 
 - Users are redirected to an error page where the error is explained in plain understandable terms, and then given the option to go back to the search page without using the browser back button.
@@ -302,4 +248,3 @@ Simple linear structure, where all the pages have the same sort of feel, has inf
 1. Searching for a movie with more than one word results in a response object with the original_title property having a : after the first word of the title. For example: original_title: "TRON: legacy". This semicolon creates a mismatch between the search query string and the original_title property, for which the movie result is not shown. This is due to the if staement in line 36 of script.js which carries out a strict equality match between the two, and then executes the block that appends the response data into the corresponding elements on the main-info div in main-content.html. The issue has been fixed by replacing the semicolon with an empty string in its position in the string returned from the original_title property. A comment is present that explains this in line 28 of script.js.
 2. The movie poster image is not displayed. logging an error on the console stating the resource could not be found. it was found upon reading the solution posted on StackOverflow, that the base url needs to be appended to the poster_path in order to access the poster. The solution is referred to here: (Getting movie image from TMDB)[https://stackoverflow.com/questions/36027666/getting-movie-image-from-tmdb]. Adding the appended url with the path to the poster resolved this issue, and the poster is displayed. 
 3. The deployed version faced an issue regarding Node 20 being deprecated for the virtual environment that github uses to build and host the github pages, referred to as Github Actions. Due to node 20 being deprecated, the pages for Movie Freeks failed to build successfully, for which the committed changes to display the movie actors were not evident on the deployed version. Upon going through the deployment logs for Movie Freeks and going through this article (Deprecation of Node 20 on GitHub Actions runners)[https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/], the issue was solved by including an environment variable instructing Github Actions to force the use of Node 24. The error was not present on earlier deployed versions of Movie Freeks.
-4. The signup form heading, along with the hint element was not being styled on the deployed version. Apparently, the class name attribute for the signup form was not correct and the form was also wrongly targeted in the signup.css stylesheet. The attribute was corrected and the style declaration to target the form was also ammended to solve the issue of the styles not being applied in the deployed version of Movie Freeks.
