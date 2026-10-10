@@ -246,6 +246,8 @@ Simple linear structure, where all the pages have the same sort of feel, has inf
 
 Manual Testing:
 
+Movie search page test-
+
 - Feature - The user is able to view movie information when they search for a movie on the main page. The user is also taken to an error page of sorts that tells them that a movie could not be found when they enter gibberish or the incorrect search term.
 
 - Action- Search for a few movies on the main page, and ensure that the searches show up, providing screenshots for the search results to document the success. Enter gibbesrish or just random mixed up text to trigger the error page and make sure the error message is present on the page.
@@ -253,6 +255,47 @@ Manual Testing:
 - Expected - The main page shows the corresponding movie information on the .movie-info div when the user clicks on the search movie button to search a movie. The movie information displays responsively when viewed across mobile tablet and desktop screens. 
 
 - Actual result - The main page shows the search results accordingly when a movie is searched. When a mistake has been made purposedly, the error page pops up and the error message is seen in full, along with the link to take the user back to the main page functioning perfectly. The page accomodates the elements on thye page according to the three breakpoints of mobile, tablet and desktop. Screenshots have been provided below to document the result. The sign up and log in links however are still visible on the footer menu. These were removed and the next few screenshots of the pages document this change. On the deployed version, an issue with the link to take the user back to the main page was found. Ultimately it was found that the file path for the link to navigate back to the main page was not a relative path. This caused a broken link on the deployed version. The issue was solved and the link now is functioning. 
+
+Test for links in navbar and footer across all pages:
+
+Feature - The user is able to navigate across all pages of the website, and no links are broken.
+
+Action - Manually test each link by clicking and ensuring that the links navigate to the correct page. 
+
+Expected - ALl the links should work seamlessly and not be broken.
+
+Actual result - The links have been tested one by one in the corresponding manner: First the home link of the page on the navbar, then the home link on the footer. All three pages were tested in this manner. All of the links work accordingly.
+
+Tests for the about page:
+
+Feature - An about page loads up when the user clicks on the about link in either the navbar or the footer.The page has a paragraph explaining how the project came to be, and what inspired the idea behind the project, and what the website aims to offer to the users. The paragraph text is simply styled to make it look good and be readable. 
+
+Action - Navigate to the about page and ensure that it loads up(ensure that the link is not broken) Inspect the styling of the page, taking into account whether the styles are properly applied. 
+
+Expected - The about page should have a short paragraph(not just a few lines long), the styles of the page should be in line with the main page, and the paragraph text should be properly aligned. 
+
+Actual result - Upon the page loading, a styling issue became immediately apparent. The stylesheet seems to be not being applied, resulting in the footer appearing close to the paragraph. The footer background is not applied, and the sign up and log in links are also here present. The navbar links menu is hovering close to the nabvar brand. It is clear that the stylesheet is not being read. The screenshot below shows this:
+
+MIME type error 
+
+![Movie Freeks about page MIME  type error](./assets/images/MIME_type_error.png)
+
+
+About page test result:
+
+![Movie Freeks about page test result](./assets/images/about_page_test.png)
+
+A warning on the console showed that the MIME type text/html is not supported. This cause of the error was a missing stylesheet. The stylesheets were seemingly inadvertently removed while removing the sign up and log in stylesheets. The styles were redone, that makes the contact form look even better and polished now, retaining the familiar color scheme across all the pages. A screenshot below shows the result of the issue being fixed:
+
+![Movie Freeks about page issues fixed](./assets/images/)
+
+Feature - The contact form shows up when the user clicks on the contact link and the styles are properly applied. The form shows the user the feedback when a mistake has been made and notifies the user of a success in sending the contact message. 
+
+Action - Open up the contact page by clicking the contact links on both the footer and the navbar, and ensure that the page loads up, along with the styles. Test the responsiveness of the contact form by triggering the breakpoint for mobile, tablet and desktop screen sizes. Attempt to trigger the error messages by inputting incorrect text on the form input. 
+
+Expected - The form should display properly with its' styles being applied, and shoudl show the user the validation messages. 
+
+Actual Result - The form had the same issue of the stylesheet being removed and the styles not being applied. This impacted the resnponsiveness of the contact page. The styles were re-declared by creating a new contact form stylesheet, and the proper styles were adopted by taking into consideration the layout of the other pages.
 
 Screenshots for the movie search page test:
 Original screenshots with the links in place-
@@ -290,6 +333,7 @@ Search result with typo(space after title)
 Search result with correct keyword
 
 ![Search result with correct keyword](./assets/images/search_result_no_typo.png)
+
 
 ## Fixed Issues
 1. Searching for a movie with more than one word results in a response object with the original_title property having a : after the first word of the title. For example: original_title: "TRON: legacy". This semicolon creates a mismatch between the search query string and the original_title property, for which the movie result is not shown. This is due to the if statement in line 36 of script.js which carries out a strict equality match between the two, and then executes the block that appends the response data into the corresponding elements on the main-info div in main-content.html. The issue has been fixed by replacing the semicolon with an empty string in its position in the string returned from the original_title property. A comment is present that explains this in line 28 of script.js.
