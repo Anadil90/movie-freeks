@@ -91,12 +91,12 @@ data.results.filter(//Filter the data response from the api directly and return 
          
         }//end of if statement     
     })
-    
+
     if(!foundMovie) {
         /*Inject error message template into .movie-search-container*/
         const errorText = `<h4>Error 404</h4> \n <h5>Not found</h5> \n
         <p>The movie you searched for was not found.</p> \n
-        <p>No worries!. Let's go <a href="/main-content.html"">back</a>.</p>`
+        <p>No worries! Let's go <a href="./main-content.html"">back</a>.</p>`
 
         $(".movie-search-container").html(errorText)
     }
