@@ -244,6 +244,33 @@ Movie Freeks signup page wireframe
 ## Information Architecture approach:
 Simple linear structure, where all the pages have the same sort of feel, has information arranged in the same way, provides no surprises, and is not complicated to follow through. The most straightforward process that can be imagined, and does not leave the user to overthink which leads to what.
 
+Manual Testing:
+
+- Feature - The user is able to view movie information when they search for a movie on the main page. The user is also taken to an error page of sorts that tells them that a movie could not be found when they enter gibberish or the incorrect search term.
+
+- Action- Search for a few movies on the main page, and ensure that the searches show up, providing screenshots for the search results to document the success. Enter gibbesrish or just random mixed up text to trigger the error page and make sure the error message is present on the page.
+
+- Expected - The main page shows the corresponding movie information on the .movie-info div when the user clicks on the search movie button to search a movie. The movie information displays responsively when viewed across mobile tablet and desktop screens. 
+
+- Actual result - The main page shows the search results accordingly when a movie is searched. When a mistake has been made purposedly, the error page pops up and the error message is seen in full, along with the link to take the user back to the main page functioning perfectly. The page accomodates the elements on thye page according to the three breakpoints of mobile, tablet and desktop. Screenshots have been provided below to document the result. The sign up and log in links however are still visible on the footer menu. These were removed and the next few screenshots of the pages document this change. 
+
+Screenshots for the movie search page test:
+Original screenshots with the links in place-
+- Screenshot 1
+![Search movie page test original desktop](./assets/images/search_movie_test_desktop.png)
+- Screenshot 2 
+![Search movie page test original mobile](./assets/images/search_movie_test_mobile.png)
+
+Screenshots with the sign up and login links removed
+- screenshot 3
+![Search movie page test fixed tablet](./assets/images/search_movie_test_tablet_fixed.png)
+- Screenshot 4
+![Search movie page test fixed desktop](./assets/images/search_result_test_desktop_fixed.png)
+- Screenshot 5
+![Search movie page test fixed mobile](./assets/images/search_results_test_mobile_fixed.png)
+
+
+
 ## Fixed Issues
 1. Searching for a movie with more than one word results in a response object with the original_title property having a : after the first word of the title. For example: original_title: "TRON: legacy". This semicolon creates a mismatch between the search query string and the original_title property, for which the movie result is not shown. This is due to the if staement in line 36 of script.js which carries out a strict equality match between the two, and then executes the block that appends the response data into the corresponding elements on the main-info div in main-content.html. The issue has been fixed by replacing the semicolon with an empty string in its position in the string returned from the original_title property. A comment is present that explains this in line 28 of script.js.
 2. The movie poster image is not displayed. logging an error on the console stating the resource could not be found. it was found upon reading the solution posted on StackOverflow, that the base url needs to be appended to the poster_path in order to access the poster. The solution is referred to here: (Getting movie image from TMDB)[https://stackoverflow.com/questions/36027666/getting-movie-image-from-tmdb]. Adding the appended url with the path to the poster resolved this issue, and the poster is displayed. 
