@@ -141,6 +141,35 @@ footer {
     margin-left: 10px;
 }
 
+/* About Page */
+
+.about-section {
+    margin-top: 100px;
+    text-align: center;
+    border: 2px solid white;
+    padding: 10px;
+    background-color:#a8dfdc;
+    width: 74vw;
+}
+
+#about-paragraph {
+    text-align: justify;
+    padding: 10px;
+}
+
+.main-heading {
+    color: #264653;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
 /* media queries for the main-content page */ 
 @media screen and (min-width:320px) and (max-width:767px) {
     #movie-search > .form-elements-container {
@@ -193,5 +222,12 @@ footer {
 
     .movie-info-elements {
         font-size: small;
+    }
+    #about-paragraph {
+        font-size: small;
+    }
+
+    #about-heading {
+        font-size: large;
     }
 }

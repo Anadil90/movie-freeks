@@ -52,17 +52,13 @@ footer {
     text-decoration: none
 }
 
-/* Main Content */
-.container {
-    flex: 1;
-}
-
 /* Heading */
 .main-heading {
     text-align: center;
     margin-top: 90px;
     color: #17a2b8;
     font-weight: bold;
+    font-size: larger;
 }
 
 #contact-form-heading {
@@ -71,8 +67,9 @@ footer {
 }
 
 /* Contact Form */
+
 #contact-form {
-    max-width: 700px;
+    width: 70%;
     margin: 0 auto;
     padding: 30px;
     border-radius: 12px;
@@ -86,7 +83,7 @@ footer {
 
 /* Inputs and Textarea */
 .form-control {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .form-control:focus {

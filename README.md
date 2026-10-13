@@ -276,18 +276,15 @@ Expected - The about page should have a short paragraph(not just a few lines lon
 
 Actual result - Upon the page loading, a styling issue became immediately apparent. The stylesheet seems to be not being applied, resulting in the footer appearing close to the paragraph. The footer background is not applied, and the sign up and log in links are also here present. The navbar links menu is hovering close to the nabvar brand. It is clear that the stylesheet is not being read. The screenshot below shows this:
 
-MIME type error 
-
-![Movie Freeks about page MIME  type error](./assets/images/MIME_type_error.png)
-
-
 About page test result:
 
 ![Movie Freeks about page test result](./assets/images/about_page_test.png)
 
-A warning on the console showed that the MIME type text/html is not supported. This cause of the error was a missing stylesheet. The stylesheets were seemingly inadvertently removed while removing the sign up and log in stylesheets. The styles were redone, that makes the contact form look even better and polished now, retaining the familiar color scheme across all the pages. A screenshot below shows the result of the issue being fixed:
+Apparently, the styles for the about page was missing, which led to the issue as seen above in the screenshot. also, the about section was being targeted wrongly, which led to the styles not being applied to the section at all. These issues were mitigated and the result is shown below with the fixes applied.
 
-![Movie Freeks about page issues fixed](./assets/images/)
+screenshot of the issue being fixed:
+
+![Movie Freeks about page issues fixed](./assets/images/about_fixed.png)
 
 Feature - The contact form shows up when the user clicks on the contact link and the styles are properly applied. The form shows the user the feedback when a mistake has been made and notifies the user of a success in sending the contact message. 
 
@@ -295,7 +292,9 @@ Action - Open up the contact page by clicking the contact links on both the foot
 
 Expected - The form should display properly with its' styles being applied, and shoudl show the user the validation messages. 
 
-Actual Result - The form had the same issue of the stylesheet being removed and the styles not being applied. This impacted the resnponsiveness of the contact page. The styles were re-declared by creating a new contact form stylesheet, and the proper styles were adopted by taking into consideration the layout of the other pages.
+Actual Result - The form had the same issue of the stylesheet being removed and the styles not being applied. This impacted the resnponsiveness of the contact page. A warning on the console showed that the MIME type text/html is not supported. This cause of the error was a missing stylesheet. The stylesheets were seemingly inadvertently removed while removing the sign up and log in stylesheets. The styles were re-declared by creating a new contact form stylesheet, and the proper styles were adopted by taking into consideration the layout of the other pages. The styles were redone, that makes the contact form look even better and polished now, retaining the familiar color scheme across all the pages. There was also the issue of the contact form having fixed width of 700px. The fixed width was changed to a pecentage width of 70% and the textarea rows being reduced to 4, resulting in the contact form fitting within the viewport. The screenshot below shows the final result of the fixes applied:
+
+![Movie Freeks contact page issues fixed](./assets/images/contact_fixed.png)
 
 Screenshots for the movie search page test:
 Original screenshots with the links in place-
