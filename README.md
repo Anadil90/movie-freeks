@@ -228,10 +228,6 @@ Movie Freeks contact page tablet wireframe:
 Movie Freeks contact page mobile wireframe:
 ![Movie Freeks contact wireframe mobile](./wireframes/contact_wireframe_mobile.png)
 
-
-Movie Freeks signup page wireframe
-![Movie Freeks signup wireframe](./wireframes/signup-wireframe.png)
-
 ## User Experience Design methodology:
 - Simple, informative, and non complex interface that gives the user exactly what the user asks for.
 - One single page for the user content, that is the search result of the movie.
