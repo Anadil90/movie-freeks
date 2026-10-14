@@ -94,8 +94,7 @@ footer {
 /*styles for the movie info div*/
 .movie-info {
     margin-top: 10px;
-    flex-direction: row;
-    flex-direction: row;
+    flex-direction: row-reverse;
     gap: 10px;
     text-align: justify;
 
@@ -110,8 +109,8 @@ footer {
     font-size: large;
 }
 
-.movie-poster {
-    width:100%;/*stretch to full width of flex container*/
+#movie-poster {
+    width: 25%;/*stretch to full width of flex container*/
 }
 
 #info-container {
@@ -196,9 +195,10 @@ footer {
     }
 
     .movie-info {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
-    .movie-poster {
+
+    #movie-poster {
         width: 100%;
     }
 

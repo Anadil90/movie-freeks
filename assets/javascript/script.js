@@ -81,12 +81,18 @@ data.results.filter(//Filter the data response from the api directly and return 
 
                 //Show movie plot
                 moviePlot.html(`<label class=movie-info-label>Plot: </label> ${movie.overview}`); 
-                //Set img attribute to display movie poster
+                //Create img element 
+                const poster = document.createElement("img");//Create img element
+                $(poster).attr("id", "movie-poster")
+                //Set img attributes to display movie poster
                 const posterUrlBase = "https://image.tmdb.org/t/p/w500/";
                 const posterAttribute = `${posterUrlBase + movie.poster_path}`;//set the src attribute to the poster url and the path from api
-                $(".movie-poster").attr("src", posterAttribute);//set the poster image for the movie
+                poster.src = posterAttribute;//set the poster image for the movie
                 //Set the alt text for the movie for accessibility and when image doesn't load
-                $(".movie-poster").attr("alt", `Poster image for the movie ${movie.original_title}`)
+                poster.alt = `Poster image for the movie ${movie.original_title}`
+                
+                
+                $(".movie-info").append(poster);
                 $(".movie-info").show()//show the .movie-info div with the search results
          
         }//end of if statement     
