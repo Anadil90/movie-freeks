@@ -239,7 +239,7 @@ Movie Freeks signup page wireframe
 - The user is given sensible feedback regarding their actions, when it comes to interacting with forms and the search results.
 - Effective warnings are given to the users to let them know of an error that occurred. 
 - Users are redirected to an error page where the error is explained in plain understandable terms, and then given the option to go back to the search page without using the browser back button.
-- Users should have the option to toggle a darker theme that allows for better readability. This consideration comes to mind when the users are viewing the website on a tablet or mobile device on their bedside in the dark.
+- Users should have the option to toggle a darker theme that allows for better readability. This consideration comes to mind when the users are viewing the website on a tablet or mobile device on their bedside in the dark. This is a culd have feature, and will be implemented in the future. For now it is out of the scope.
 
 ## Information Architecture approach:
 Simple linear structure, where all the pages have the same sort of feel, has information arranged in the same way, provides no surprises, and is not complicated to follow through. The most straightforward process that can be imagined, and does not leave the user to overthink which leads to what.
@@ -255,6 +255,11 @@ Movie search page test-
 - Expected - The main page shows the corresponding movie information on the .movie-info div when the user clicks on the search movie button to search a movie. The movie information displays responsively when viewed across mobile tablet and desktop screens. 
 
 - Actual result - The main page shows the search results accordingly when a movie is searched. When a mistake has been made purposedly, the error page pops up and the error message is seen in full, along with the link to take the user back to the main page functioning perfectly. The page accomodates the elements on thye page according to the three breakpoints of mobile, tablet and desktop. Screenshots have been provided below to document the result. The sign up and log in links however are still visible on the footer menu. These were removed and the next few screenshots of the pages document this change. On the deployed version, an issue with the link to take the user back to the main page was found. Ultimately it was found that the file path for the link to navigate back to the main page was not a relative path. This caused a broken link on the deployed version. The issue was solved and the link now is functioning. 
+
+Searching for a movie with more than one word results in a response object with the original_title property having a : after the first word of the title. For example: original_title: "TRON: legacy". This semicolon creates a mismatch between the search query string and the original_title property, for which the movie result is not shown. This is due to the if statement in line 36 of script.js which carries out a strict equality match between the two, and then executes the block that appends the response data into the corresponding elements on the main-info div in main-content.html. The issue has been fixed by replacing the semicolon with an empty string in its position in the string returned from the original_title property. A comment is present that explains this in line 28 of script.js.
+
+The movie poster image is not displayed. logging an error on the console stating the resource could not be found. it was found upon reading the solution posted on StackOverflow, that the base url needs to be appended to the poster_path in order to access the poster. The solution is referred to here: (Getting movie image from TMDB)[https://stackoverflow.com/questions/36027666/getting-movie-image-from-tmdb]. Adding the appended url with the path to the poster resolved this issue, and the poster is displayed.
+
 
 Test for links in navbar and footer across all pages:
 
@@ -333,8 +338,46 @@ Search result with correct keyword
 
 ![Search result with correct keyword](./assets/images/search_result_no_typo.png)
 
+HTML validator test results:
+Main page
+The main.content.html file gives only a warning for the element tags being empty, but it was left empty as the text content for the elements are to be dynamically injected through javascript. Other than that, the validator does not show any breaking errors. The main css stylesheet for the main page and the about page styles showed no errors. The about page html page source also showed no errors. The main styleseheet contains the styles for the about page, and that showed no errors as shown below with the validation of the main page.
 
-## Fixed Issues
-1. Searching for a movie with more than one word results in a response object with the original_title property having a : after the first word of the title. For example: original_title: "TRON: legacy". This semicolon creates a mismatch between the search query string and the original_title property, for which the movie result is not shown. This is due to the if statement in line 36 of script.js which carries out a strict equality match between the two, and then executes the block that appends the response data into the corresponding elements on the main-info div in main-content.html. The issue has been fixed by replacing the semicolon with an empty string in its position in the string returned from the original_title property. A comment is present that explains this in line 28 of script.js.
-2. The movie poster image is not displayed. logging an error on the console stating the resource could not be found. it was found upon reading the solution posted on StackOverflow, that the base url needs to be appended to the poster_path in order to access the poster. The solution is referred to here: (Getting movie image from TMDB)[https://stackoverflow.com/questions/36027666/getting-movie-image-from-tmdb]. Adding the appended url with the path to the poster resolved this issue, and the poster is displayed. 
-3. The deployed version faced an issue regarding Node 20 being deprecated for the virtual environment that github uses to build and host the github pages, referred to as Github Actions. Due to node 20 being deprecated, the pages for Movie Freeks failed to build successfully, for which the committed changes to display the movie actors were not evident on the deployed version. Upon going through the deployment logs for Movie Freeks and going through this article (Deprecation of Node 20 on GitHub Actions runners)[https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/], the issue was solved by including an environment variable instructing Github Actions to force the use of Node 24. The error was not present on earlier deployed versions of Movie Freeks.
+W3C html validator main page
+![Main page html validator](./assets/images/main_page_html_validator.png)
+
+W3C css validator main styles
+![Main styles validator](./assets/images/css_validator_main_styles.png)
+
+Contact page:
+The css styles for contact also showed no erorrs or warnings, and the html page source for the contact page showed no errors.
+
+W3C html validator contact page
+![Contact page validator html](./assets/images/contact_validator_html.png)
+
+W3C validator css contact page
+![Contact page validator css](./assets/images/css_validator_contact_page.png)
+
+W3C html validator About page
+![About page validator html about page](./assets/images/html_validator_about_page.png)
+
+W3C validator css contact page
+![About page validator css](./assets/images/w3c_validator_css_about.png)
+
+Lighthouse testing results:
+The lighthouse testing report shows that the page response time is good, but there is some room for a bit improvement. Furthermore is also shows that the practices being employed are rather good. 
+
+Lighthouse test
+![Lighthouse test](./assets/images/lighthouse_report.png)
+
+Deployment issues faced in early development cycle: 
+
+Feature - 
+The website should run perfectly from the deployed version, with all pages and styles loading
+
+Action - Launch the live site and see that every page loads without any visible issues that result in a 404 error. 
+
+Expected - The website should launch without issues, and should also not take too much time to load.
+
+Actual result - Movie Freeks failed to launch, giving a 404 error status stating the page build had failed, and Node 20 being decprecated.
+
+The deployed version faced an issue regarding Node 20 being deprecated for the virtual environment that github uses to build and host the github pages, referred to as Github Actions. Due to node 20 being deprecated, the pages for Movie Freeks failed to build successfully, for which the committed changes to display the movie actors were not evident on the deployed version. Upon going through the deployment logs for Movie Freeks and going through this article (Deprecation of Node 20 on GitHub Actions runners)[https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/], the issue was solved by including an environment variable instructing Github Actions to force the use of Node 24. The error was not present on earlier deployed versions of Movie Freeks.
